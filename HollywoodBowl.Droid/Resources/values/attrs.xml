@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="textFieldStyle" format="reference"/>
+    
+  <declare-styleable name="FontsUtils">
+    <attr name="typeface"/>
+  </declare-styleable>
+
+  <attr name="typeface" format="enum">
+    <enum name="apercu_regular" value="0"/>
+    <enum name="apercu_medium" value="1"/>
+    <enum name="apercu_bold" value="2"/>
+  </attr>
+</resources>

@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1015935331746",
+    "firebase_url": "https://laphil-dc262.firebaseio.com",
+    "project_id": "laphil-dc262",
+    "storage_bucket": "laphil-dc262.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015935331746:android:904826a7ed39c922",
+        "android_client_info": {
+          "package_name": "com.hollywoodbowl.bowlapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015935331746-odt7fqmpv15vh19ebtb00dsv2el4qvbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARTiqNJQI55-8c6lTtmY_BZ3eedgg8jjM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015935331746:android:2d75ffe8eff05e3e",
+        "android_client_info": {
+          "package_name": "com.laphil.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015935331746-odt7fqmpv15vh19ebtb00dsv2el4qvbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARTiqNJQI55-8c6lTtmY_BZ3eedgg8jjM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

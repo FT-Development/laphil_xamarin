@@ -1,0 +1,22 @@
+﻿{
+  "address_no": "3996655",
+  "customer_no": "1459479",
+  "address_type": "3",
+  "address_type_desc": "Home Address",
+  "street1": "97 Icknield Street",
+  "street2": {},
+  "city": "Birmingham",
+  "state": "West Midlands",
+  "postal_code": "B18 6RU",
+  "postal_code_format": "B18 6RU",
+  "country": "209",
+  "country_long": "United Kingdom",
+  "country_short": "UK ",
+  "start_dt": "2017-09-19T03:05:05-07:00",
+  "end_dt": "2017-09-19T03:05:05-07:00",
+  "months": "YYYYYYYYYYYY",
+  "primary_ind": "N",
+  "inactive": "Y",
+  "geo_area": "4",
+  "purposes": {}
+}

@@ -1,0 +1,102 @@
+using Foundation;
+using System;
+using UIKit;
+using LAPhil.Application;
+using LAPhil.Urls;
+
+
+namespace LAPhil.iOS
+{
+    public partial class SignUpPageWebView : UIViewController
+    {
+        public static UIActivityIndicatorView activity = new UIActivityIndicatorView();
+
+        LAPhilUrlService urls = ServiceContainer.Resolve<LAPhilUrlService>();
+
+        public SignUpPageWebView (IntPtr handle) : base (handle)
+        {
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            activity = this.activityIndicator;
+
+            btnClose.TouchUpInside += CloseView;
+            btnBack.TouchUpInside += BackView;
+
+        }
+
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
+            var urlsRegister = urls.WebRegister;
+            Console.WriteLine("urlsRegister : {0}", urlsRegister);
+
+            //LAPhilShared.SharedClass.GetEvetnTypeData();
+
+            this.webViewSignUp.ScalesPageToFit = true;
+            this.webViewSignUp.Delegate = new MyCustomWebViewDelegate();
+            this.webViewSignUp.LoadRequest(new NSUrlRequest(new NSUrl(urlsRegister)));
+        }
+
+        private void CloseView(object sender, EventArgs e)
+        {
+            Console.WriteLine("Pop CloseView ");
+            this.DismissViewController(true, null);
+        }
+        private void BackView(object sender, EventArgs e)
+        {
+            Console.WriteLine("Pop BackView ");
+            this.NavigationController.PopViewController(true);
+            //this.DismissViewController(true, null);
+        }
+
+        public class MyCustomWebViewDelegate : UIWebViewDelegate
+        {
+            // get's never called:
+            public override bool ShouldStartLoad(UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType)
+            {
+                Console.WriteLine("ShouldStartLoad");
+                return true;
+            }
+
+            public override void LoadFailed(UIWebView webView, NSError error)
+            {
+                Console.WriteLine("LoadFailed");
+            }
+
+
+            public override void LoadingFinished(UIWebView webView)
+            {
+                activity.StopAnimating();
+                activity.Hidden = true;
+                Console.WriteLine("LoadingFinished");
+            }
+
+
+            public override void LoadStarted(UIWebView webView)
+            {
+                activity.StartAnimating();
+                activity.Hidden = false;
+                Console.WriteLine("LoadStarted");
+                //Harish_A3
+                var JavaScriptForRemoveHeader = "javascript:(function() { " +
+                "var head = document.getElementsByTagName('header')[0];"
+                + "head.parentNode.removeChild(head);" +
+                    "})()";
+                webView.EvaluateJavascript(JavaScriptForRemoveHeader);
+
+                var JavaScriptForRemoveGrayColor = "javascript:(function(){"
+                    + "document.getElementsByClassName('hero-background phatvideo-bg videobg-id-0')[0].style.height = '60%';"
+                    + "})()";
+
+                webView.EvaluateJavascript(JavaScriptForRemoveGrayColor);
+            }
+
+        }
+
+    }
+}

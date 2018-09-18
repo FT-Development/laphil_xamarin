@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>Hollywood Bowl</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>9.0</string>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/apercu-black-italic-pro.otf</string>
+		<string>Fonts/apercu-black-pro.otf</string>
+		<string>Fonts/apercu-bold-italic-pro.otf</string>
+		<string>Fonts/apercu-bold-pro.otf</string>
+		<string>Fonts/apercu-italic-pro.otf</string>
+		<string>Fonts/apercu-light-italic-pro.otf</string>
+		<string>Fonts/apercu-light-pro.otf</string>
+		<string>Fonts/apercu-medium-italic-pro.otf</string>
+		<string>Fonts/apercu-medium-pro.otf</string>
+		<string>Fonts/apercu-mono-bold-pro.otf</string>
+		<string>Fonts/apercu-mono-pro.otf</string>
+		<string>Fonts/apercu-regular-pro.otf</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.1.10</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We require your permission to create calendar events.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This allows us to provide you with special promotions, offers and venue information.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This allows us to provide you with special promotions, offers and venue information.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This allows us to provide you with special promotions, offers and venue information.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>HollywoodBowl requires your permission to detect nearby beacons.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.hollywoodbowl.bowlapp</string>
+	<key>CFBundleVersion</key>
+	<string>3</string>
+</dict>
+</plist>

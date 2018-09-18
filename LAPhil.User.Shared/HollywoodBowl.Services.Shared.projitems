@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{C1FB2DCE-7D9D-4E13-B346-6CE2BE9A4590}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>LAPhil.User</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\LoginService.Droid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\LoginService.iOS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Exceptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\LoginService.NetStandard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\LoginService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Support\" />
+  </ItemGroup>
+</Project>

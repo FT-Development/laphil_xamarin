@@ -1,0 +1,19 @@
+﻿{
+  "customer_no": "1459479",
+  "full_name1": "Krzysztof Kurasz                                       ",
+  "full_name2": {
+    "0": "                                                       "
+  },
+  "all_const": "WCC",
+  "memb_level": "A16",
+  "current_status": "Active",
+  "memb_expirtion": "2018-11-29T23:59:59.997-08:00",
+  "create_dt": "2016-10-17T06:07:09.063-07:00",
+  "donation": "2283.0000",
+  "userid": "webapi  ",
+  "on_account": "30.0000",
+  "inactive": {},
+  "cust_type": "1",
+  "cust_group": "1",
+  "worker_ind": "N"
+}

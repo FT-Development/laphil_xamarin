@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0.4" package="com.laphil.app" android:versionCode="17">
+	<uses-sdk android:minSdkVersion="20" android:targetSdkVersion="23" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+	<uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<!-- FOR PUSH -->
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<!--	<permission android:name="com.test.laphil.LAPhil.permission.MAPS_RECEIVE" android:protectionLevel="signature" />-->
+	<application android:largeHeap="true" android:label="LA Phil" android:theme="@style/AppTheme" android:icon="@mipmap/icon" android:hardwareAccelerated="true">
+		<!--<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyB0spAqrqq_6xutT0wdE1H3l8ctqmsvZ0Q" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />-->
+		<meta-data android:name="io.fabric.ApiKey" android:value="2d5d8b2033db979ecc1f1fab68deb9b1c923fc57" />
+		<service android:name="com.gimbal.internal.service.GimbalService" android:exported="false">
+			<intent-filter>
+				<action android:name="com.laphil.app.service.GIMBAL_SERVICE" />
+			</intent-filter>
+		</service>
+		<receiver android:name="com.gimbal.internal.service.GimbalServiceStartStopReceiver" android:enabled="true">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.ACTION_SHUTDOWN" />
+			</intent-filter>
+		</receiver>
+		<!-- <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+  -->
+	</application>
+</manifest>

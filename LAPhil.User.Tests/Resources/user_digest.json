@@ -1,0 +1,128 @@
+﻿{
+  "customer_no": "1459479",
+  "MOS": "29",
+  "promotion_code": "6259",
+  "bu": "1",
+  "status": "P",
+  "OriginalMOS": "29",
+  "ConstituentHeader": {
+    "customer_no": "1459479",
+    "full_name1": "Krzysztof Kurasz                                       ",
+    "full_name2": {
+      "0": "                                                       "
+    },
+    "all_const": "WCC",
+    "memb_level": "A16",
+    "current_status": "Active",
+    "memb_expirtion": "2018-11-29T23:59:59.997-08:00",
+    "create_dt": "2016-10-17T06:07:09.063-07:00",
+    "donation": "2283.0000",
+    "userid": "webapi  ",
+    "on_account": "30.0000",
+    "inactive": {},
+    "cust_type": "1",
+    "cust_group": "1",
+    "worker_ind": "N"
+  },
+  "Constituency": {
+    "constituency": "WD Current CYO Buyer",
+    "created_by": "webapi  ",
+    "create_dt": "2017-12-03T11:22:27.25-08:00",
+    "n1n2_ind": "1",
+    "id": "41",
+    "short_desc": "WCC"
+  },
+  "Contribution": [
+    {
+      "customer_no": "1459479",
+      "cont_date": "2017-11-30T04:44:40.267-08:00",
+      "recd_amt": "8.0000",
+      "cont_amt": "8.0000",
+      "type": "Gift",
+      "campaign": "2018 Individual",
+      "appeal": "LAPA Website",
+      "media_type": "Website",
+      "source_name": "LAPA Website",
+      "fund_no": "Add-On Donation-4351",
+      "ref_no": "1646223",
+      "credit_ind": "N",
+      "n1n2_ind": "1",
+      "solicitor": "LWebsite",
+      "cont_designation": "Annual Fund Support"
+    }
+  ],
+  "EmailAddresses": {
+    "eaddress_no": "3996656",
+    "address": "krzysztof.kurasz@mademedia.co.uk",
+    "eaddress_type": "1",
+    "address_type_desc": "Primary Email Address",
+    "email_ind": "Y",
+    "n1n2_ind": "3",
+    "months": "YYYYYYYYYYYY",
+    "primary_ind": "Y",
+    "inactive": "N",
+    "html_ind": "Y",
+    "market_ind": "Y",
+    "inactive1": "N",
+    "customer_no": "1459479",
+    "purposes": {}
+  },
+  "Rankings": {
+    "rank_type": "3",
+    "rank_type_desc": "CYO Subscriber",
+    "rank": "1"
+  },
+  "Memberships": {
+    "memb_org_no": "2",
+    "current_status": "2",
+    "memb_level": "A16",
+    "init_dt": "2017-11-30T00:00:00-08:00",
+    "expr_dt": "2018-11-29T23:59:59.997-08:00",
+    "current_status_desc": "Active",
+    "memb_level_desc": "Prospective Friends",
+    "memb_level_category": "4",
+    "category_desc": "Friends",
+    "memb_org_desc": "Annual",
+    "inception_dt": "2017-11-30T00:00:00-08:00",
+    "ben_provider": "0",
+    "lapse_dt": "2019-02-28T23:59:59.997-08:00",
+    "renewal_dt": "2018-08-29T23:59:59.997-07:00",
+    "declined_ind": "Y",
+    "cust_memb_no": "365113"
+  },
+  "Phones": {
+    "phone_no": "4813241",
+    "phone": "(555) 666-777",
+    "type": "56",
+    "type_desc": "Primary",
+    "day_ind": "E",
+    "tele_ind": "Y",
+    "primary_adr": "N",
+    "customer_no": "1459479",
+    "purposes": {}
+  },
+  "Addresses": [
+    {
+      "address_no": "3996655",
+      "customer_no": "1459479",
+      "address_type": "3",
+      "address_type_desc": "Home Address",
+      "street1": "97 Icknield Street",
+      "street2": {},
+      "city": "Birmingham",
+      "state": "West Midlands",
+      "postal_code": "B18 6RU",
+      "postal_code_format": "B18 6RU",
+      "country": "209",
+      "country_long": "United Kingdom",
+      "country_short": "UK ",
+      "start_dt": "2017-09-19T03:05:05-07:00",
+      "end_dt": "2017-09-19T03:05:05-07:00",
+      "months": "YYYYYYYYYYYY",
+      "primary_ind": "N",
+      "inactive": "Y",
+      "geo_area": "4",
+      "purposes": {}
+    }
+  ]
+}

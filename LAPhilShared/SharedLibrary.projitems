@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{11C291E9-FF86-4FBA-B2B0-A304A2BED5DB}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>LAPhilShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SharedClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\NavigationController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\NavigationController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\Components\NavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\tabBarRootViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\tabBarRootViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\Components\tabBarRootViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsTableViewCell.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Concerts\ConcertsTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsTableViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsTableViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Concerts\ConcertsTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ContentViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ContentViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Concerts\ContentViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\HorizontalSwipePageControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\LandingPageViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\LandingPageViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Landing\LandingPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\MyPageViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\MyPageViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\Landing\MyPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\loginNavigationView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\loginNavigationView.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Login\loginNavigationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\LogInPageViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\LogInPageViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Login\LogInPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewCell.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\More\MoreTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\More\MoreTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\MyTickets\MyTicketViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUp\SignUpPageViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUp\SignUpPageViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\SignUp\SignUpPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WhenYouHereViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WhenYouHereViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\WhenHere\WhenYouHereViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\MainViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\arrowProfiel.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\arrowProfiel%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\arrowProfiel%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\backConnect.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\backConnect%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\backConnect%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\crosWhite.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\crosWhite%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\crosWhite%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\debussy.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\debussy%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\debussy%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\facebook.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\facebook%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\facebook%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\facebook-login.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen1.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen1%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen2.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen2%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen2%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen3.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen3%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\screen3%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\white-pip-circle%401x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\white-pip-circle%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\white-pip-circle%403x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\white-pip-full%401x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\white-pip-full%402x.png" />
+    <BundleResource Include="$(MSBuildThisFileDirectory)Resources\white-pip-full%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsTableViewCell.xib" />
+    <InterfaceDefinition Include="$(MSBuildThisFileDirectory)Views\Landing\LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewCell.xib" />
+  </ItemGroup>
+</Project>

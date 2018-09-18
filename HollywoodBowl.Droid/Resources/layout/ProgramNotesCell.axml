@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:padding="10dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/pieceCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:padding="5dp"
+        android:textColor="@color/progNotes_cell_text_color"
+        android:text="PIECE 1" />
+    <TextView
+        android:id="@+id/tv_piece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Piano Concerto in G"
+        android:textSize="20dp"
+        android:padding="5dp"
+        android:textColor="@color/app_color_Brown"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/composerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/progNotes_cell_text_color"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:text="COMPOSER" />
+    <TextView
+        android:id="@+id/btnAboutArtist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maurice Ravel"
+        android:paddingLeft="5dp"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/lengthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/progNotes_cell_text_color"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:text="LENGTH" />
+    <TextView
+        android:id="@+id/tv_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="c. 32 minutes"
+        android:paddingLeft="5dp"
+        android:textSize="16sp"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/orchesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/progNotes_cell_text_color"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:text="ORCHESTRATION" />
+    <TextView
+        android:id="@+id/tv_orches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/performTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/progNotes_cell_text_color"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:text="FIRST LA PHILHARMONIC PERFORMANCE" />
+    <TextView
+        android:id="@+id/tv_perform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:visibility="gone"
+        android:textSize="16sp"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/desTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/progNotes_cell_text_color"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:text="DESCRIPTION" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="4"
+            android:paddingLeft="5dp"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/tv_readMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_description"
+            android:paddingLeft="5dp"
+            android:text="Read More"
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:textColor="@color/app_textColor_Blue" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tvIntermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intermission"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</LinearLayout>

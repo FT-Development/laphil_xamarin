@@ -1,0 +1,44 @@
+{
+  "formatVersion": 1,
+  "passTypeIdentifier": "pass.com.laphil.my",
+  "serialNumber": "nmyuxofgna",
+  "teamIdentifier": "4X27NZ224M",
+  "webServiceURL": "https://hollywoodbowl.com/passes/",
+  "authenticationToken": "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+  "relevantDate": "2011-12-08T13:00-08:00",
+  "locations": [
+    {
+      "longitude": -122.3748889,
+      "latitude": 37.6189722
+    },
+    {
+      "longitude": -122.03118,
+      "latitude": 37.33182
+    }
+  ],
+  "barcode": {
+    "message": "123456789",
+    "format": "PKBarcodeFormatPDF417",
+    "messageEncoding": "iso-8859-1"
+  },
+  "organizationName": "Hollywood Bowl",
+  "description": "Event Ticket",
+  "foregroundColor": "rgb(255, 255, 255)",
+  "backgroundColor": "rgb(60, 65, 76)",
+  "eventTicket": {
+    "primaryFields": [
+      {
+        "key": "event",
+        "label": "EVENT",
+        "value": "Hollywood Bowl"
+      }
+    ],
+    "secondaryFields": [
+      {
+        "key": "loc",
+        "label": "LOCATION",
+        "value": "Hollywood Bowl"
+      }
+    ]
+  }
+}

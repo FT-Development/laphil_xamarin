@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#231f20</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#2A9FD8</color>
+
+    <color name="progNotes_cell_text_color">#808489</color>
+    <color name="app_color_Brown">#231f20</color>
+    <color name="tab_select_color">#dcdddf</color>
+    <color name="app_textColor_Blue">#2A9FD8</color>
+    <color name="app_textColor_Blue_laphil">#2A9FD8</color>
+    <color name="button_background_color">#1a96d4</color>
+    <color name="intro_button_color">#f8f8fa</color>
+    <color name="login_text_color">#b6b6b6</color>
+    <color name="login_bg_color">#ffffff</color>
+    <color name="fb_bg_color">#3b5999</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="step_line_color">#231f20</color>
+    <color name="line_color">#c4c6c5</color>
+    <color name="lighttext_color">#c4c6c5</color>
+    <color name="background_color">#f5f5f7</color>
+    <color name="bg_half_white_color">#f8f8fa</color>
+    <color name="popup_text_color">#919191</color>
+    <color name="black_transparent">#62000000</color>
+    <color name="event_type">#3f3f41</color>
+</resources>
+
+ <!-- <color name="colorPrimary">#231f20</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#4471DB</color>
+    
+    <color name="progNotes_cell_text_color">#808489</color>
+    <color name="app_color_Brown">#231f20</color>
+    <color name="tab_select_color">#dcdddf</color>
+    <color name="app_textColor_Blue">#4471DB</color>
+    <color name="app_textColor_Blue_laphil">#2A9FD8</color>
+    <color name="button_background_color">#4471DB</color>
+    <color name="intro_button_color">#f8f8fa</color>
+    <color name="login_text_color">#b6b6b6</color>
+    <color name="login_bg_color">#ffffff</color>
+    <color name="fb_bg_color">#3b5999</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="step_line_color">#231f20</color>
+    <color name="line_color">#c4c6c5</color>
+    <color name="lighttext_color">#c4c6c5</color>
+    <color name="background_color">#f5f5f7</color>
+    <color name="bg_half_white_color">#f8f8fa</color>
+    <color name="popup_text_color">#919191</color>
+    <color name="black_transparent">#62000000</color>
+    <color name="event_type">#3f3f41</color>-->

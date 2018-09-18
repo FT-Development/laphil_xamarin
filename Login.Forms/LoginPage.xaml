@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Login.Forms.LoginPage" Title="Login">
+
+    <ContentPage.ToolbarItems>
+		<ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+	<StackLayout Spacing="20" Padding="30" VerticalOptions="StartAndExpand">
+			
+            <Label TextColor="#6D6D6D" FontSize = "20" Text="Hey there, You'll need to be logged in to access your tickets" />
+
+            <Button Text="LOG IN" Clicked="OnLoginButtonClicked" TextColor="White"
+                        BackgroundColor="#00D1DF"
+                        Command="{Binding LoginCommand}"/>
+            <Button Text="CONTINUE WITH FACEBOOK" TextColor="White"
+                        BackgroundColor="#2594DD"
+                        Command="{Binding LoginCommand}"/>
+
+            <Label TextColor="#6D6D6D" FontSize = "16" Text="Don't have an account?" />
+            <Button Text="Sing Up" TextColor="#00D1DF" />
+    </StackLayout>
+	</ContentPage.Content>
+    
+</ContentPage>

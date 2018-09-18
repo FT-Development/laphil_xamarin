@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{11C291E9-FF86-4FBA-B2B0-A304A2BED5DB}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>LAPhilShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)SharedClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\HorizontalSwipePageControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\LandingPageViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\LandingPageViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Landing\LandingPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\MyPageViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\MyPageViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\Landing\MyPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\loginNavigationView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\loginNavigationView.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Login\loginNavigationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\LogInPageViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\LogInPageViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Login\LogInPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewCell.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\More\MoreTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreTableViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\More\MoreTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\MyTickets\MyTicketViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WhenYouHereViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WhenYouHereViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\WhenHere\WhenYouHereViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\MainViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\ContentViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Landing\ContentViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Concerts\ContentViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\Components\NavigationController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\Components\NavigationController.designer.cs">
+      <DependentUpon>..\..\..\..\LAPhil.iOS\Views\Components\NavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\Components\tabBarRootViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\Components\tabBarRootViewController.designer.cs">
+      <DependentUpon>..\..\..\..\LAPhil.iOS\Views\Components\tabBarRootViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsCalendarFilterTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsCalendarFilterTableViewCell.designer.cs">
+      <DependentUpon>ConcertsCalendarFilterTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUp\SignUpPageViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUp\SignUpPageViewController.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Views\SignUp\SignUpPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\myTicketDetailViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\myTicketDetailViewController.designer.cs">
+      <DependentUpon>myTicketDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketsTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketsTableViewCell.designer.cs">
+      <DependentUpon>MyTicketsTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Programs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Performances.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\GettingHereViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\GettingHereViewController.designer.cs">
+      <DependentUpon>GettingHereViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ChooseEventType\ChooseEventTypesTableCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ChooseEventType\ChooseEventTypesTableCell.designer.cs">
+      <DependentUpon>ChooseEventTypesTableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertEventViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertEventViewController.designer.cs">
+      <DependentUpon>ConcertEventViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUp\SignUpPageWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignUp\SignUpPageWebView.designer.cs">
+      <DependentUpon>SignUpPageWebView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsCalendarFilterViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsCalendarFilterViewController.designer.cs">
+      <DependentUpon>ConcertsCalendarFilterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\ourWebSite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\ourWebSite.designer.cs">
+      <DependentUpon>ourWebSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\AboutTheArtistViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\AboutTheArtistViewController.designer.cs">
+      <DependentUpon>AboutTheArtistViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketsTitleTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketsTitleTableViewCell.designer.cs">
+      <DependentUpon>MyTicketsTitleTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WhenYouTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WhenYouTableViewCell.designer.cs">
+      <DependentUpon>WhenYouTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\GettingHereTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\GettingHereTableViewCell.designer.cs">
+      <DependentUpon>GettingHereTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NearBy\NearbyDiningViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NearBy\NearbyDiningViewController.designer.cs">
+      <DependentUpon>NearbyDiningViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NearBy\NearbyTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NearBy\NearbyTableViewCell.designer.cs">
+      <DependentUpon>NearbyTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\ChartViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\ChartViewController.designer.cs">
+      <DependentUpon>ChartViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WebAccessibilityViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WebAccessibilityViewController.designer.cs">
+      <DependentUpon>WebAccessibilityViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WebChartViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WebChartViewController.designer.cs">
+      <DependentUpon>WebChartViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WebNearbyDiningViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WebNearbyDiningViewController.designer.cs">
+      <DependentUpon>WebNearbyDiningViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\WebMetroViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\WebMetroViewController.designer.cs">
+      <DependentUpon>WebMetroViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\WebBuyNowViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\WebBuyNowViewController.designer.cs">
+      <DependentUpon>WebBuyNowViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\ParkingViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\ParkingViewController.designer.cs">
+      <DependentUpon>ParkingViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FoodWine\WebFoodWineViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FoodWine\WebFoodWineViewController.designer.cs">
+      <DependentUpon>WebFoodWineViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\WebForgotPasswordViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login\WebForgotPasswordViewController.designer.cs">
+      <DependentUpon>WebForgotPasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsCalendarTableViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsCalendarTableViewController.designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsCalendarTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsCalendarTableViewCell.designer.cs">
+      <DependentUpon>ConcertsCalendarTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsTableViewCell.designer.cs">
+      <DependentUpon>..\..\..\LAPhil.iOS\Concerts\ConcertsTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProgramNotes\ProgramViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProgramNotes\PieceDetailViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\WebSupportUsViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\WebGettingHereViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WebViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\WebFaqViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\WebFaqViewController.designer.cs">
+      <DependentUpon>WebFaqViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\SupportTableViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\SupportTableViewController.designer.cs">
+      <DependentUpon>SupportTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\Components\RestrictedUINavigationController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\Components\LoginRequiredAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UrbanAirship\PushHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UrbanAirship\InboxDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UrbanAirship\MessageCenterViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProgramNotes\Program_DescriptionViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProgramNotes\Program_ActionViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\InteractiveMap\InteractiveMapViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\InteractiveMap\InteractiveMapViewController.designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ChooseEventType\EventTypesTableViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ChooseEventType\EventTypesTableViewController.designer.cs">
+      <DependentUpon>EventTypesTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ChooseEventType\EventTypesTableViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ChooseEventType\EventTypesTableViewCell.designer.cs">
+      <DependentUpon>EventTypesTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Calendar\CustomSelectionController.designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Calendar\CustomSelectionController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProgramNotes\AboutThePerformanceViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GimbalManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GimbalPlaceManagerDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\GenericWebViewController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Concerts\Components\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\ChooseEventType\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\SignUp\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Calendar\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\ProgramNotes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\GettingHere\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\NearBy\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\FoodWine\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\UrbanAirship\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="$(MSBuildThisFileDirectory)Views\Landing\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)LAPhil001.pkpass" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>LA Phil</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>2d5d8b2033db979ecc1f1fab68deb9b1c923fc57</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>9.3</string>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/apercu-black-italic-pro.otf</string>
+		<string>Fonts/apercu-black-pro.otf</string>
+		<string>Fonts/apercu-bold-italic-pro.otf</string>
+		<string>Fonts/apercu-bold-pro.otf</string>
+		<string>Fonts/apercu-italic-pro.otf</string>
+		<string>Fonts/apercu-light-italic-pro.otf</string>
+		<string>Fonts/apercu-light-pro.otf</string>
+		<string>Fonts/apercu-medium-italic-pro.otf</string>
+		<string>Fonts/apercu-medium-pro.otf</string>
+		<string>Fonts/apercu-mono-bold-pro.otf</string>
+		<string>Fonts/apercu-mono-pro.otf</string>
+		<string>Fonts/apercu-regular-pro.otf</string>
+	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>CFBundleShortVersionString</key>
+	<string>4.0.8</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Please grant us permission to add events to your calendar.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This allows us to provide you with special promotions, offers and venue information.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This allows us to provide you with special promotions, offers and venue information.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This allows us to provide you with special promotions, offers and venue information.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>LAPhil requires your permission to detect nearby beacons.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.laphil.laphil</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+</dict>
+</plist>

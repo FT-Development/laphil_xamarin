@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string name="com.crashlytics.android.build_id">dab286a1-e5ab-4526-be77-8f08bba1bc2c</string>
+   <!-- <string name="com.crashlytics.android.build_id">1.1</string>-->
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">LAPhil.Droid</string>
+	<string name ="next">NEXT</string>
+	<string name ="start">GET STARTED</string>
+	<string name="laphilewebsite">
+		<a href="http://www.laphil.com">Visit our website</a>
+	</string>
+	<string name="noti_popup_desc">If you later wish to be notified \n when tickets are available,\n allow permission from \n settings.</string>
+	<string name="welcomePopupDescText">We would like to send you notifications to let you know when your tickets are available.</string>
+	<string name="trafic_advisory">Lorem ipsum dolor sit amet, constetur \nadipiscing elit. Aenean lacinia bibendum nulla sed consectetur. \n \nLoream ipsum dolor sit amet, constetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur</string>
+</resources>

@@ -1,0 +1,74 @@
+﻿{
+  "url": "http://laphil-dev.herokuapp.com/api/performances/2/",
+  "start_time": "2017-12-13T02:00:00Z",
+  "program": {
+    "url": "http://laphil-dev.herokuapp.com/api/programs/2/",
+    "name": "My Program",
+    "performers": [
+      {
+        "url": "http://laphil-dev.herokuapp.com/api/artists/2/",
+        "display_name": "Jeff Eliasen",
+        "primary_role": "Class Clown",
+        "organization": "Awesomeness Is Me",
+        "title": "Mr Awesome",
+        "website": "https://iamawesome.com/",
+        "bio": "<p>This <em>is</em> my <strong>content</strong>.</p>"
+      }
+    ],
+    "pieces": [
+      {
+        "url": "http://laphil-dev.herokuapp.com/api/pieces/1/",
+        "name": "Mozart Concerto",
+        "composer": "http://laphil-dev.herokuapp.com/api/artists/1/",
+        "description": "",
+        "duration": null,
+        "listen_text": "",
+        "listen_url": ""
+      },
+      {
+        "url": "http://laphil-dev.herokuapp.com/api/pieces/1/",
+        "name": "Mozart Concerto",
+        "composer": "http://laphil-dev.herokuapp.com/api/artists/1/",
+        "description": "",
+        "duration": null,
+        "listen_text": "",
+        "listen_url": ""
+      },
+      {
+        "url": "http://laphil-dev.herokuapp.com/api/pieces/2/",
+        "name": "Some Awesome Piece",
+        "composer": "http://laphil-dev.herokuapp.com/api/artists/2/",
+        "description": "",
+        "duration": null,
+        "listen_text": "",
+        "listen_url": ""
+      },
+      {
+        "url": "http://laphil-dev.herokuapp.com/api/pieces/2/",
+        "name": "Some Awesome Piece",
+        "composer": "http://laphil-dev.herokuapp.com/api/artists/2/",
+        "description": "",
+        "duration": null,
+        "listen_text": "",
+        "listen_url": ""
+      },
+      {
+        "url": "http://laphil-dev.herokuapp.com/api/pieces/3/",
+        "name": "Test piece",
+        "composer": null,
+        "description": "",
+        "duration": null,
+        "listen_text": "",
+        "listen_url": ""
+      }
+    ]
+  },
+  "series": {
+    "url": "http://laphil-dev.herokuapp.com/api/series/2/",
+    "name": "Test series 1",
+    "description": ""
+  },
+  "preperformance_talk_start_time": null,
+  "calendar_flag": "Sold Out",
+  "gate_time": null
+}

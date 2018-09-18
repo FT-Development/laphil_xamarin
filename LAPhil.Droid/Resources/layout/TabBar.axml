@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:visibility="visible"
+    android:layout_height="50dp"
+    android:layout_width="match_parent"
+    android:background="@color/app_color_Brown">
+    <SharedLibraryAndroid.TabBarButton
+        android:id="@+id/TabNavigation1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:textColor="@color/white"
+        android:text="Concerts"
+        android:paddingTop="5dp"
+        android:drawableTop="@drawable/tab_concerts"
+        android:textSize="@dimen/font_tab"
+        android:background="@color/app_color_Brown" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+    <SharedLibraryAndroid.TabBarButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:text="My Tickets"
+        android:textColor="@color/white"
+        android:paddingTop="5dp"
+        android:background="@color/app_color_Brown"
+        android:drawableTop="@drawable/tab_my_tickets"
+        android:textSize="@dimen/font_tab"
+        android:id="@+id/TabNavigation2" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+    <SharedLibraryAndroid.TabBarButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:text="When You're Here"
+        android:paddingTop="5dp"
+        android:drawableTop="@drawable/tab_getting"
+        android:textSize="@dimen/font_tab"
+        android:textColor="@color/white"
+        android:background="@color/app_color_Brown"
+        android:id="@+id/TabNavigation3" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+    <SharedLibraryAndroid.TabBarButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:text="When You're Here"
+        android:paddingTop="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_tab"
+        android:background="@color/app_color_Brown"
+        android:visibility="gone"
+        android:id="@+id/TabNavigation4" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+    <SharedLibraryAndroid.TabBarButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:background="@color/app_color_Brown"
+        android:text="More"
+        android:drawablePadding="30dp"
+        android:textSize="@dimen/font_tab"
+        android:textColor="@color/white"
+        android:id="@+id/TabNavigation5" />
+</LinearLayout>

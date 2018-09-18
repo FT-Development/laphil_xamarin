@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Models\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Services\Support\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LAPhil.Logging\LAPhil.Logging.csproj" />
+    <ProjectReference Include="..\LAPhil.Application\LAPhil.Application.csproj" />
+    <ProjectReference Include="..\LAPhil.Connectivity\LAPhil.Connectivity.csproj" />
+    <ProjectReference Include="..\LAPhil.Cache\LAPhil.Cache.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Serilog" Version="2.7.1" />
+    <PackageReference Include="System.Reactive" Version="4.1.0" />
+  </ItemGroup>
+</Project>

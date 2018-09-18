@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Create a password"
+            android:textColor="@color/app_color_Brown"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/lblPassWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableLeft="@drawable/login_password"
+            android:drawablePadding="20dp"
+            android:hint="Password"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:paddingBottom="15dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/login_text_color"
+            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/lblPassWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableLeft="@drawable/login_password"
+            android:drawablePadding="20dp"
+            android:hint="Confirm Password"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:paddingBottom="15dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/login_text_color"
+            android:textSize="18sp" />
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Password fine print goes here"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/login_text_color"
+            android:layout_width="wrap_content" />
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@color/button_background_color"
+            android:padding="20dp"
+            android:text="SIGN UP"
+            android:textColor="@color/white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="50dp"
+                android:layout_height="5dp"
+                android:background="@drawable/login_step" />
+            <View
+                android:layout_width="50dp"
+                android:layout_height="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/login_step" />
+            <View
+                android:layout_width="50dp"
+                android:layout_height="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/login_step" />
+        </LinearLayout>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Step 3 of 3"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

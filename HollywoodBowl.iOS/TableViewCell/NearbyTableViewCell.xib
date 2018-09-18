@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="600" id="cxk-wN-pdQ" customClass="NearbyTableViewCell" restorationIdentifier="NearbyTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="599"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="807" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Others/debussy.png">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patina Restaurant Group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5463" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                        <rect key="frame" x="10" y="228" width="310" height="46"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                        <fontDescription key="fontDescription" name="ApercuPro-Bold" family="Apercu Pro" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5597" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                        <rect key="frame" x="10" y="280" width="310" height="21"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="16"/>
+                        <color key="textColor" colorSpace="calibratedRGB" red="0.18823529411764706" green="0.48627450980392156" blue="0.70588235294117652" alpha="1"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14377" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="213-55-1234">
+                        <rect key="frame" x="10" y="317" width="310" height="21"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="16"/>
+                        <color key="textColor" colorSpace="calibratedRGB" red="0.18823529411764706" green="0.48627450980392156" blue="0.70588235294117652" alpha="1"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="15708" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" numberOfLines="5000">
+                        <rect key="frame" x="10" y="354.5" width="300" height="246.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <fontDescription key="fontDescription" name="ApercuPro-Regular" family="Apercu Pro" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <string key="text">Captivating audiences throughout the world, Charles Dutoit is one of today’s most sought after conductors, having performed with major orchestras on stages in five continents.
+Presently Artistic Director and Principal Conductor of the Royal Philharmonic Orchestra in London, he recently celebrated his thirty-year artistic collaboration with the Philadelphia Orchestra, where he holds the title of Conductor Laureate.</string>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblDiscription" destination="15708" id="name-outlet-15708"/>
+                <outlet property="lblPhoneNo" destination="14377" id="name-outlet-14377"/>
+                <outlet property="lblViewWebSite" destination="5597" id="name-outlet-5597"/>
+                <outlet property="lblTitle" destination="5463" id="name-outlet-5463"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="TabIcons/TabConcerts.png" width="16" height="20"/>
+        <image name="TabIcons/TabGetting.png" width="15" height="18"/>
+        <image name="TabIcons/TabMore.png" width="21" height="5"/>
+        <image name="TabIcons/TabMyTickets.png" width="26" height="26"/>
+        <image name="LoginIcons/LoginEmail.png" width="16" height="12"/>
+        <image name="LoginIcons/LoginFirstName.png" width="13" height="17"/>
+        <image name="LoginIcons/LoginLine.png" width="335" height="1"/>
+        <image name="LoginIcons/LoginPassword.png" width="17" height="18"/>
+        <image name="LoginIcons/LoginStep.png" width="60" height="5"/>
+        <image name="AppLogo/AppLogoForNav.png" width="94" height="23"/>
+        <image name="AppLogo/AppLogoWithTitle.png" width="182" height="83"/>
+        <image name="OnBoardSlide/OnBoardSlide01.png" width="375" height="667"/>
+        <image name="OnBoardSlide/OnBoardSlide02.png" width="375" height="667"/>
+        <image name="OnBoardSlide/OnBoardSlide03.png" width="375" height="667"/>
+        <image name="OnBoardSlide/OnBoardSlideIcon01.png" width="21" height="26"/>
+        <image name="OnBoardSlide/OnBoardSlideIcon02.png" width="26" height="26"/>
+        <image name="OnBoardSlide/OnBoardSlideIcon03.png" width="23" height="28"/>
+        <image name="OnBoardSlide/white-pip-circle.png" width="17" height="17"/>
+        <image name="OnBoardSlide/white-pip-full.png" width="11" height="11"/>
+        <image name="Others/arrowProfiel.png" width="12" height="21"/>
+        <image name="Others/backConnect.png" width="11" height="18"/>
+        <image name="Others/crosWhite.png" width="15" height="15"/>
+        <image name="Others/debussy.png" width="652" height="620"/>
+        <image name="Others/facebook.png" width="12" height="23"/>
+        <image name="Others/facebook-login.png" width="480" height="230"/>
+        <image name="Concerts/Concerts0.png" width="375" height="256"/>
+        <image name="Concerts/Concerts1.png" width="375" height="256"/>
+        <image name="Concerts/Concerts2.png" width="375" height="256"/>
+        <image name="Concerts/EventType0.png" width="103" height="18"/>
+        <image name="Concerts/EventType1.png" width="93" height="18"/>
+        <image name="Concerts/EventType2.png" width="79" height="18"/>
+        <image name="Concerts/EventType3.png" width="70" height="18"/>
+        <image name="AppLogo/NavTopBar.png" width="375" height="73"/>
+        <image name="ConcertsCalendar/btnFilterImage.png" width="335" height="40"/>
+        <image name="ConcertsCalendar/filter.png" width="14" height="14"/>
+        <image name="ConcertsCalendar/filterLine.png" width="335" height="1"/>
+        <image name="ConcertsCalendar/ArrowSmall.png" width="7" height="10"/>
+        <image name="MyTickets/BarCode.png" width="194" height="200"/>
+        <image name="MyTickets/TicketsArrow.png" width="7" height="10"/>
+        <image name="GettingHere/GettingHereMap.png" width="335" height="227"/>
+        <image name="AppIcon/iTunesArtwork.png" width="512" height="512"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-App-20x20.png" width="20" height="20"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-App-29x29.png" width="29" height="29"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-App-40x40.png" width="40" height="40"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-App-57x57.png" width="57" height="57"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-App-60x60.png" width="60" height="60"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-App-72x72.png" width="72" height="72"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-App-76x76.png" width="76" height="76"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-App-83.5x83.5.png" width="83.5" height="83.5"/>
+        <image name="AppIcon/AppIcon.appiconset/Icon-Small-50x50.png" width="50" height="50"/>
+        <image name="AppIcon/AppIcon.appiconset/ItunesArtwork.png" width="512" height="512"/>
+        <image name="AppLogo/TitleLogo.png" width="198" height="29"/>
+        <image name="Others/btnBack.png" width="12" height="19"/>
+        <image name="Concerts/CalenderCellImage/Calender0.png" width="100" height="100"/>
+        <image name="Concerts/CalenderCellImage/Calender1.png" width="100" height="100"/>
+        <image name="Concerts/CalenderCellImage/Calender3.png" width="100" height="100"/>
+        <image name="Concerts/EventType4.png" width="114" height="18"/>
+        <image name="TabIcons/tabBG.png" width="94" height="49"/>
+        <image name="TabIcons/TabWhen.png" width="26" height="22"/>
+        <image name="GIF/010001.png" width="780" height="16"/>
+        <image name="GIF/010002.png" width="780" height="16"/>
+        <image name="GIF/010003.png" width="780" height="16"/>
+        <image name="GIF/010004.png" width="780" height="16"/>
+        <image name="GIF/010005.png" width="780" height="16"/>
+        <image name="GIF/010006.png" width="780" height="16"/>
+        <image name="GIF/010007.png" width="780" height="16"/>
+        <image name="GIF/010008.png" width="780" height="16"/>
+        <image name="GIF/010009.png" width="780" height="16"/>
+        <image name="GIF/010010.png" width="780" height="16"/>
+        <image name="GIF/010011.png" width="780" height="16"/>
+        <image name="GIF/010012.png" width="780" height="16"/>
+        <image name="GIF/010013.png" width="780" height="16"/>
+        <image name="GIF/010014.png" width="780" height="16"/>
+        <image name="GIF/010015.png" width="780" height="16"/>
+        <image name="GIF/010016.png" width="780" height="16"/>
+        <image name="GIF/010017.png" width="780" height="16"/>
+        <image name="GIF/010018.png" width="780" height="16"/>
+        <image name="GIF/010019.png" width="780" height="16"/>
+        <image name="GIF/010020.png" width="780" height="16"/>
+        <image name="GIF/010021.png" width="780" height="16"/>
+        <image name="GIF/010022.png" width="780" height="16"/>
+        <image name="GIF/010023.png" width="780" height="16"/>
+        <image name="GIF/010024.png" width="780" height="16"/>
+        <image name="GIF/010025.png" width="780" height="16"/>
+        <image name="GIF/010026.png" width="780" height="16"/>
+        <image name="GIF/010027.png" width="780" height="16"/>
+        <image name="GIF/010028.png" width="780" height="16"/>
+        <image name="GIF/010029.png" width="780" height="16"/>
+        <image name="GIF/010030.png" width="780" height="16"/>
+        <image name="GIF/010031.png" width="780" height="16"/>
+        <image name="GIF/010032.png" width="780" height="16"/>
+        <image name="GIF/010033.png" width="780" height="16"/>
+        <image name="GIF/010034.png" width="780" height="16"/>
+        <image name="GIF/010035.png" width="780" height="16"/>
+        <image name="GIF/010036.png" width="780" height="16"/>
+        <image name="GIF/010037.png" width="780" height="16"/>
+        <image name="GIF/010038.png" width="780" height="16"/>
+        <image name="GIF/010039.png" width="780" height="16"/>
+        <image name="GIF/010040.png" width="780" height="16"/>
+        <image name="GIF/010041.png" width="780" height="16"/>
+        <image name="GIF/010042.png" width="780" height="16"/>
+        <image name="GIF/010043.png" width="780" height="16"/>
+        <image name="GIF/010044.png" width="780" height="16"/>
+        <image name="GIF/010045.png" width="780" height="16"/>
+        <image name="GIF/010046.png" width="780" height="16"/>
+        <image name="GIF/010047.png" width="780" height="16"/>
+        <image name="GIF/010048.png" width="780" height="16"/>
+        <image name="GIF/010049.png" width="780" height="16"/>
+        <image name="GIF/010050.png" width="780" height="16"/>
+        <image name="GIF/010051.png" width="780" height="16"/>
+        <image name="GIF/010052.png" width="780" height="16"/>
+        <image name="GIF/010053.png" width="780" height="16"/>
+        <image name="GIF/010054.png" width="780" height="16"/>
+        <image name="GIF/010055.png" width="780" height="16"/>
+        <image name="GIF/010056.png" width="780" height="16"/>
+        <image name="GIF/010057.png" width="780" height="16"/>
+        <image name="GIF/010058.png" width="780" height="16"/>
+        <image name="GIF/010059.png" width="780" height="16"/>
+        <image name="GIF/010060.png" width="780" height="16"/>
+        <image name="GIF/010061.png" width="780" height="16"/>
+        <image name="GIF/010062.png" width="780" height="16"/>
+        <image name="GIF/010063.png" width="780" height="16"/>
+        <image name="GIF/010064.png" width="780" height="16"/>
+        <image name="GIF/010065.png" width="780" height="16"/>
+        <image name="GIF/010066.png" width="780" height="16"/>
+        <image name="GIF/010067.png" width="780" height="16"/>
+        <image name="GIF/010068.png" width="780" height="16"/>
+        <image name="GIF/010069.png" width="780" height="16"/>
+        <image name="GIF/010070.png" width="780" height="16"/>
+        <image name="GIF/010071.png" width="780" height="16"/>
+        <image name="GIF/010072.png" width="780" height="16"/>
+        <image name="GIF/010073.png" width="780" height="16"/>
+        <image name="GIF/010074.png" width="780" height="16"/>
+        <image name="GIF/010075.png" width="780" height="16"/>
+        <image name="GIF/010076.png" width="780" height="16"/>
+        <image name="GIF/010077.png" width="780" height="16"/>
+        <image name="GIF/010078.png" width="780" height="16"/>
+        <image name="GIF/010079.png" width="780" height="16"/>
+        <image name="GIF/010080.png" width="780" height="16"/>
+        <image name="GIF/010081.png" width="780" height="16"/>
+        <image name="GIF/010082.png" width="780" height="16"/>
+        <image name="GIF/010083.png" width="780" height="16"/>
+        <image name="GIF/010084.png" width="780" height="16"/>
+        <image name="GIF/010085.png" width="780" height="16"/>
+        <image name="GIF/010086.png" width="780" height="16"/>
+        <image name="GIF/010087.png" width="780" height="16"/>
+        <image name="GIF/010088.png" width="780" height="16"/>
+        <image name="GIF/010089.png" width="780" height="16"/>
+        <image name="GIF/010090.png" width="780" height="16"/>
+        <image name="GIF/010091.png" width="780" height="16"/>
+        <image name="GIF/010092.png" width="780" height="16"/>
+        <image name="GIF/010093.png" width="780" height="16"/>
+        <image name="GIF/010094.png" width="780" height="16"/>
+        <image name="GIF/010095.png" width="780" height="16"/>
+        <image name="GIF/010096.png" width="780" height="16"/>
+        <image name="GIF/010097.png" width="780" height="16"/>
+        <image name="GIF/010098.png" width="780" height="16"/>
+        <image name="GIF/010099.png" width="780" height="16"/>
+        <image name="GIF/010100.png" width="780" height="16"/>
+        <image name="GIF/010101.png" width="780" height="16"/>
+        <image name="GIF/010102.png" width="780" height="16"/>
+        <image name="GIF/010103.png" width="780" height="16"/>
+        <image name="GIF/010104.png" width="780" height="16"/>
+        <image name="GIF/010105.png" width="780" height="16"/>
+        <image name="GIF/010106.png" width="780" height="16"/>
+        <image name="GIF/010107.png" width="780" height="16"/>
+        <image name="GIF/010108.png" width="780" height="16"/>
+        <image name="GIF/010109.png" width="780" height="16"/>
+        <image name="GIF/010110.png" width="780" height="16"/>
+        <image name="GIF/010111.png" width="780" height="16"/>
+        <image name="GIF/010112.png" width="780" height="16"/>
+        <image name="GIF/010113.png" width="780" height="16"/>
+        <image name="GIF/010114.png" width="780" height="16"/>
+        <image name="GIF/010115.png" width="780" height="16"/>
+        <image name="GIF/010116.png" width="780" height="16"/>
+        <image name="GIF/010117.png" width="780" height="16"/>
+        <image name="GIF/010118.png" width="780" height="16"/>
+        <image name="GIF/010119.png" width="780" height="16"/>
+        <image name="GIF/010120.png" width="780" height="16"/>
+        <image name="GIF/010121.png" width="780" height="16"/>
+        <image name="GIF/010122.png" width="780" height="16"/>
+        <image name="GIF/010123.png" width="780" height="16"/>
+        <image name="GIF/010124.png" width="780" height="16"/>
+        <image name="GIF/010125.png" width="780" height="16"/>
+        <image name="GIF/010126.png" width="780" height="16"/>
+        <image name="GIF/010127.png" width="780" height="16"/>
+        <image name="GIF/010128.png" width="780" height="16"/>
+        <image name="GIF/010129.png" width="780" height="16"/>
+        <image name="GIF/010130.png" width="780" height="16"/>
+        <image name="GIF/010131.png" width="780" height="16"/>
+        <image name="GIF/010132.png" width="780" height="16"/>
+        <image name="GIF/010133.png" width="780" height="16"/>
+        <image name="GIF/010134.png" width="780" height="16"/>
+        <image name="GIF/010135.png" width="780" height="16"/>
+        <image name="GIF/010136.png" width="780" height="16"/>
+        <image name="GIF/010137.png" width="780" height="16"/>
+        <image name="GIF/010138.png" width="780" height="16"/>
+        <image name="GIF/010139.png" width="780" height="16"/>
+        <image name="GIF/010140.png" width="780" height="16"/>
+        <image name="GIF/010141.png" width="780" height="16"/>
+        <image name="GIF/010142.png" width="780" height="16"/>
+        <image name="GIF/010143.png" width="780" height="16"/>
+        <image name="GIF/010144.png" width="780" height="16"/>
+        <image name="GIF/010145.png" width="780" height="16"/>
+        <image name="GIF/010146.png" width="780" height="16"/>
+        <image name="GIF/010147.png" width="780" height="16"/>
+        <image name="GIF/010148.png" width="780" height="16"/>
+        <image name="GIF/010149.png" width="780" height="16"/>
+        <image name="GIF/010150.png" width="780" height="16"/>
+        <image name="GIF/010151.png" width="780" height="16"/>
+        <image name="GIF/010152.png" width="780" height="16"/>
+        <image name="GIF/010153.png" width="780" height="16"/>
+        <image name="GIF/010154.png" width="780" height="16"/>
+        <image name="GIF/010155.png" width="780" height="16"/>
+        <image name="GIF/010156.png" width="780" height="16"/>
+        <image name="GIF/010157.png" width="780" height="16"/>
+        <image name="GIF/010158.png" width="780" height="16"/>
+        <image name="GIF/010159.png" width="780" height="16"/>
+        <image name="GIF/010160.png" width="780" height="16"/>
+        <image name="GIF/010161.png" width="780" height="16"/>
+        <image name="GIF/010162.png" width="780" height="16"/>
+        <image name="GIF/010163.png" width="780" height="16"/>
+        <image name="GIF/010164.png" width="780" height="16"/>
+        <image name="GIF/010165.png" width="780" height="16"/>
+        <image name="GIF/010166.png" width="780" height="16"/>
+        <image name="GIF/010167.png" width="780" height="16"/>
+        <image name="GIF/010168.png" width="780" height="16"/>
+        <image name="GIF/010169.png" width="780" height="16"/>
+        <image name="GIF/010170.png" width="780" height="16"/>
+        <image name="GIF/010171.png" width="780" height="16"/>
+        <image name="GIF/010172.png" width="780" height="16"/>
+        <image name="GIF/010173.png" width="780" height="16"/>
+        <image name="GIF/010174.png" width="780" height="16"/>
+        <image name="GIF/010175.png" width="780" height="16"/>
+        <image name="GIF/010176.png" width="780" height="16"/>
+        <image name="GIF/010177.png" width="780" height="16"/>
+        <image name="GIF/010178.png" width="780" height="16"/>
+        <image name="GIF/010179.png" width="780" height="16"/>
+        <image name="GIF/010180.png" width="780" height="16"/>
+        <image name="GIF/010181.png" width="780" height="16"/>
+        <image name="GIF/010182.png" width="780" height="16"/>
+        <image name="GIF/010183.png" width="780" height="16"/>
+        <image name="GIF/010184.png" width="780" height="16"/>
+        <image name="GIF/010185.png" width="780" height="16"/>
+        <image name="GIF/010186.png" width="780" height="16"/>
+        <image name="GIF/010187.png" width="780" height="16"/>
+        <image name="GIF/010188.png" width="780" height="16"/>
+        <image name="GIF/010189.png" width="780" height="16"/>
+        <image name="GIF/010190.png" width="780" height="16"/>
+        <image name="GIF/010191.png" width="780" height="16"/>
+        <image name="GIF/010192.png" width="780" height="16"/>
+        <image name="GIF/010193.png" width="780" height="16"/>
+        <image name="GIF/010194.png" width="780" height="16"/>
+        <image name="GIF/010195.png" width="780" height="16"/>
+        <image name="GIF/010196.png" width="780" height="16"/>
+        <image name="GIF/010197.png" width="780" height="16"/>
+        <image name="GIF/010198.png" width="780" height="16"/>
+        <image name="GIF/010199.png" width="780" height="16"/>
+        <image name="GIF/010200.png" width="780" height="16"/>
+        <image name="GIF/010201.png" width="780" height="16"/>
+        <image name="GIF/010202.png" width="780" height="16"/>
+        <image name="GIF/010203.png" width="780" height="16"/>
+        <image name="GIF/010204.png" width="780" height="16"/>
+        <image name="GIF/010205.png" width="780" height="16"/>
+        <image name="GIF/010206.png" width="780" height="16"/>
+        <image name="GIF/010207.png" width="780" height="16"/>
+        <image name="GIF/010208.png" width="780" height="16"/>
+        <image name="GIF/010209.png" width="780" height="16"/>
+        <image name="GIF/010210.png" width="780" height="16"/>
+        <image name="GIF/010211.png" width="780" height="16"/>
+        <image name="GIF/010212.png" width="780" height="16"/>
+        <image name="GIF/010213.png" width="780" height="16"/>
+        <image name="GIF/010214.png" width="780" height="16"/>
+        <image name="GIF/010215.png" width="780" height="16"/>
+        <image name="GIF/010216.png" width="780" height="16"/>
+        <image name="GIF/010217.png" width="780" height="16"/>
+        <image name="GIF/010218.png" width="780" height="16"/>
+        <image name="GIF/010219.png" width="780" height="16"/>
+        <image name="GIF/010220.png" width="780" height="16"/>
+        <image name="GIF/010221.png" width="780" height="16"/>
+        <image name="GIF/010222.png" width="780" height="16"/>
+        <image name="GIF/010223.png" width="780" height="16"/>
+        <image name="GIF/010224.png" width="780" height="16"/>
+        <image name="GIF/010225.png" width="780" height="16"/>
+        <image name="GIF/010226.png" width="780" height="16"/>
+        <image name="GIF/010227.png" width="780" height="16"/>
+        <image name="GIF/010228.png" width="780" height="16"/>
+        <image name="GIF/010229.png" width="780" height="16"/>
+        <image name="GIF/010230.png" width="780" height="16"/>
+        <image name="GIF/010231.png" width="780" height="16"/>
+        <image name="GIF/010232.png" width="780" height="16"/>
+        <image name="GIF/010233.png" width="780" height="16"/>
+        <image name="GIF/010234.png" width="780" height="16"/>
+        <image name="GIF/010235.png" width="780" height="16"/>
+        <image name="GIF/010236.png" width="780" height="16"/>
+        <image name="GIF/010237.png" width="780" height="16"/>
+        <image name="GIF/010238.png" width="780" height="16"/>
+        <image name="GIF/010239.png" width="780" height="16"/>
+        <image name="Others/Group.png" width="375" height="667"/>
+        <image name="Chart/SeatingChart.png" width="373" height="258"/>
+        <image name="Chart/MapParking.png" width="375" height="507"/>
+    </resources>
+</document>

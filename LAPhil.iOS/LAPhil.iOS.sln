@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LAPhil.iOS", "LAPhil.iOS.csproj", "{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}.Release|iPhone.Build.0 = Release|iPhone
+		{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{C1419B59-2D9C-4D4B-BC3F-59AA5C19011D}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal

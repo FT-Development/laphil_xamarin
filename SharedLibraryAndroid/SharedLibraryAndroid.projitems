@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c0a1d75d-6740-4458-a029-a6c619b26864</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SharedLibraryAndroid</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Adapter\CalendarAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapter\ConcertsAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapter\NearDiningAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapter\ProgramNotesAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapter\TicketsBarCodePagerAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Adapter\UpComingAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Performance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Programs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\UserModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\AndroidInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Utility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\TabBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\TabBarButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\CalendarFragment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\EventTypeActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\FilterActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\GettingHereView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Home\HomeView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\More\MoreView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\MyTicketsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\ProgramNotesView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyTickets\TicketsDetailView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Root\HomeActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Root\MainActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Root\SplashActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\User\LoginActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\User\SignupActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\User\SignupFirstPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\User\SignupSecondPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\User\SignupThirdPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Welcome\WelcomeActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\NearDiningView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WhenHereView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Notification\MyFirebaseMessagingService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Notification\MyFirebaseIIDService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\ParkingView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SupportUs\SupportUsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\FontUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\WhenHere\WhenYouHereWebViews.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Root\TabbedPage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Notification\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\SupportUs\" />
+  </ItemGroup>
+</Project>
