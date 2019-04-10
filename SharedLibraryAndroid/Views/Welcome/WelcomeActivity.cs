@@ -76,9 +76,10 @@ namespace SharedLibraryAndroid
             btnNext.Click += (sender, e) =>
             {
                 int current = GetItem(+1);
-                if (current < layouts.Length)
+                if (current < layouts.Length){
                     //move to next screen
                     viewPager.CurrentItem = current;
+                }
                 else
                 {
                     Dialog dialog = new Dialog(mContext);
@@ -93,7 +94,7 @@ namespace SharedLibraryAndroid
                     welcomePopupHeaderText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
                     //welcomePopupHeaderText.SetTextSize(Android.Util.ComplexUnitType, 8.0);
                     //welcomePopupDescText.SetTextSize(Android.Util.ComplexUnitType, 8.0);
-                                                            
+
                     // popupWindow.OutsideTouchable = true;
                     TextView btnNoThanks = (TextView)dialog.FindViewById(Resource.Id.btnNoThanks);
                     TextView btnOk = (TextView)dialog.FindViewById(Resource.Id.btnOk);

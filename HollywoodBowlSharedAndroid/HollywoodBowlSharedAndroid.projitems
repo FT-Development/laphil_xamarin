@@ -71,6 +71,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Activity\AboutThePerformanceActivity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adapter\PerformerArtistsAdapter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GimbalPlaceEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\FacebookHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\InteractiveMap\" />

@@ -170,7 +170,7 @@ namespace HollywoodBowl.Droid
             lytCustomBottom.AddView(tabBarView);
 
             btnBuyTicket.SetTypeface(Utility.BoldTypeface(context), Android.Graphics.TypefaceStyle.Bold);
-            lblTicketName.SetTypeface(Utility.BoldTypeface(context), Android.Graphics.TypefaceStyle.Bold);
+            lblTicketName.SetTypeface(Utility.RegularTypeface(context), Android.Graphics.TypefaceStyle.Normal);
             lblTicketDateTime.SetTypeface(Utility.RegularTypeface(context), Android.Graphics.TypefaceStyle.Normal);
             lbltag.SetTypeface(Utility.RegularTypeface(context), Android.Graphics.TypefaceStyle.Bold);
             lblRulesApply.SetTypeface(Utility.RegularTypeface(context), Android.Graphics.TypefaceStyle.Normal);

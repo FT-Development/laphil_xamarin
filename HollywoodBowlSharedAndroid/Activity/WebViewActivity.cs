@@ -23,6 +23,7 @@ namespace HollywoodBowl.Droid
         public String Url { get; set; }
         public String HeaderTitle { get; set; }
         public bool IsMobileOrdering { get; set; }
+        public bool IsPrivacyPolicy { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,6 +36,7 @@ namespace HollywoodBowl.Droid
             Url= Intent.GetStringExtra("url");
             HeaderTitle = Intent.GetStringExtra("header");
             IsMobileOrdering = Intent.GetBooleanExtra("IsMobileOrdering", false);
+            IsPrivacyPolicy = Intent.GetBooleanExtra("IsPrivacyPolicy", false);
 
             lblHeaderTextView.Text = HeaderTitle;
             btnBack.Click += delegate
@@ -49,6 +51,11 @@ namespace HollywoodBowl.Droid
                         StartActivity(intent);
                         Finish();
                     }
+                    else if (UserModel.Instance.isFromConcert == true)
+                    {
+                        Finish();
+                        OverridePendingTransition(Resource.Animation.Slide_in_left, Resource.Animation.Slide_out_right);
+                    }
                     else
                     {
                         Intent intent = new Intent(this, typeof(SupportUsActivity));
@@ -61,22 +68,7 @@ namespace HollywoodBowl.Droid
             Task.Delay(200);
             WebViewMethod();
         }
-		public override void OnBackPressed()
-		{
-            base.OnBackPressed();
-            if (UserModel.Instance.isFromMore == true)
-            {
-                Intent intent = new Intent(this, typeof(MoreActivity));
-                StartActivity(intent);
-                Finish();
-            }
-            else
-            {
-                Intent intent = new Intent(this, typeof(SupportUsActivity));
-                StartActivity(intent);
-                Finish();
-            }
-		}
+		
 		public void InitView(Context mContext)
         {
             btnBack =FindViewById<ImageView>(Resource.Id.btnBack);
@@ -111,7 +103,7 @@ namespace HollywoodBowl.Droid
             // so there's no 'white line'            
             webView.ScrollbarFadingEnabled = false;
 
-            webView.SetWebViewClient(new HybridWebViewClient(IsMobileOrdering));
+            webView.SetWebViewClient(new HybridWebViewClient(IsMobileOrdering, IsPrivacyPolicy));
 
             webView.LoadUrl(Url);
 
@@ -120,11 +112,12 @@ namespace HollywoodBowl.Droid
         private class HybridWebViewClient : WebViewClient  
         {
 
-            private bool IsMobileOrdering = false;
+            private bool IsMobileOrdering = false, IsPrivacyPolicy = false;
 
-            public HybridWebViewClient(bool isMobileOrdering) 
+            public HybridWebViewClient(bool isMobileOrdering, bool IsPrivacyPolicy) 
             {
                 this.IsMobileOrdering = isMobileOrdering;
+                this.IsPrivacyPolicy = IsPrivacyPolicy;
             }
 
             public override bool ShouldOverrideUrlLoading(WebView view, string url)  
@@ -142,9 +135,20 @@ namespace HollywoodBowl.Droid
 			{
                 base.OnLoadResource(view, url);
 
-                if (IsMobileOrdering) {
+                if (IsMobileOrdering)
+                {
                     progress_bar.Visibility = ViewStates.Gone;
-                }else {
+                }
+                else if (IsPrivacyPolicy)
+                {
+                    view.LoadUrl("javascript:(function(){"
+                                 + "var privacyAlert = document.getElementsByClassName('alert privacy-popup alert-dismissible')[0];"
+                                 + "privacyAlert.parentNode.removeChild(privacyAlert);"
+                                 + "})()");
+
+                }
+                else 
+                {
                     view.LoadUrl("javascript:(function(){"
                             + "document.getElementsByClassName('hero-background phatvideo-bg videobg-id-0')[0].style.height = '60%';"
                             + "})()");
@@ -166,14 +170,32 @@ namespace HollywoodBowl.Droid
             public override void OnReceivedError(WebView view, ClientError errorCode, string description, string failingUrl)
             {
                 base.OnReceivedError(view, errorCode, description, failingUrl);
+                progress_bar.Visibility = ViewStates.Gone;
             }
         }
-		//protected override void OnResume()
-		//{
-  //          base.OnResume();
-  //          Task.Delay(200);
-  //          GC.Collect(0);
-		//}
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            if (UserModel.Instance.isFromMore == true)
+            {
+                Intent intent = new Intent(this, typeof(MoreActivity));
+                StartActivity(intent);
+                Finish();
+            }
+            else if (UserModel.Instance.isFromConcert == true)
+            {
+                Finish();
+                OverridePendingTransition(Resource.Animation.Slide_in_left, Resource.Animation.Slide_out_right);
+            }
+            else
+            {
+                Intent intent = new Intent(this, typeof(SupportUsActivity));
+                StartActivity(intent);
+                Finish();
+            }
+        }
+
         public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
         {
             if (keyCode == Keycode.Back && webView.CanGoBack())

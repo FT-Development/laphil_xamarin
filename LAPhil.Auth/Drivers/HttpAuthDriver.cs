@@ -78,7 +78,7 @@ namespace LAPhil.Auth
             });
         }
 
-        public IObservable<AuthResponse> Login(string username, string password)
+        public IObservable<AuthResponse> Login(string username, string password, string facebookEmail)
         {
             /* 
              * 
@@ -103,7 +103,9 @@ namespace LAPhil.Auth
                 var data = new Dictionary<string, string>
                 {
                     ["username"] = username,
-                    ["password"] = password
+                    ["password"] = password, 
+                    ["login_type"] = facebookEmail == null ? "1" : "2",
+                    ["facebook_email"] = facebookEmail
                 };
 
                 var headers = new Dictionary<string, string>();
@@ -114,10 +116,7 @@ namespace LAPhil.Auth
 
                 if(result.IsFailure)
                 {
-                    if(result.Error is Unauthorized)
-                        throw new InvalidUsernameOrPassword();
-
-                    throw result.Error;
+                    throw new InvalidUsernameOrPassword();
                 }
 
                 try

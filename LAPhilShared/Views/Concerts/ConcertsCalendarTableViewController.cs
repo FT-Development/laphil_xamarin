@@ -460,7 +460,7 @@ namespace LAPhil.iOS
                 // ApercuPro-Italic
                 // ApercuPro-Bold
 
-                cell.lblTitle.AttributedText = ($"<b>{eventData.Program.Name}</b>")
+                cell.lblTitle.AttributedText = (eventData.Program.Name)
                     .HtmlAttributedString(matchingLabel: cell.lblTitle);
 
                 var imgConcertRect = cell.imgConcert.Frame;

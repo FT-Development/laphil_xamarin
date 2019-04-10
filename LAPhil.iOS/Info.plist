@@ -75,7 +75,7 @@
 		<true/>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>4.0.8</string>
+	<string>4.0.14</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -95,5 +95,27 @@
 	<string>com.laphil.laphil</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>2343424585877717</string>
+	<key>FacebookDisplayName</key>
+	<string>LA Phil</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>fb-messenger-api20140430</string>
+		<string>fb</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb2343424585877717</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

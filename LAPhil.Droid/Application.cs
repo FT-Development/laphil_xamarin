@@ -18,10 +18,10 @@ using LAPhil.User;
 using LAPhil.Platform;
 using LAPhil.Auth;
 using LAPhil.Urls;
-using FabricSdk;
-using CrashlyticsKit;
 using Xamarin.Forms;
 using UrbanAirship;
+using FabricSdk;
+using CrashlyticsKit;
 
 namespace LAPhil.Droid
 {
@@ -46,34 +46,39 @@ namespace LAPhil.Droid
           
             ConfigureServices();
 
-            AirshipConfigOptions options = new AirshipConfigOptions.Builder()
-              .SetInProduction(true)
-              .SetDevelopmentAppKey("IUNz7rBvRXiNRPstvGxpGg")
-              .SetDevelopmentAppSecret("wawJWxFwTOW3n5J5PMUgcg")
-              .SetProductionAppKey("IUNz7rBvRXiNRPstvGxpGg")
-              .SetProductionAppSecret("wawJWxFwTOW3n5J5PMUgcg")
-              .SetFcmSenderId("55941271460")
-              .Build();
-            UrbanAirship.UAirship.TakeOff(this, options);
-          
-            UrbanAirship.UAirship.TakeOff(this, (UAirship airship) =>
-            {
-                airship.PushManager.PushEnabled = true;
-                airship.PushManager.UserNotificationsEnabled = true;
-                airship.LocationManager.LocationUpdatesEnabled = true;
+            //AirshipConfigOptions options = new AirshipConfigOptions.Builder()
+                                                                   //.SetInProduction(true)
+                                                                   //.SetDevelopmentAppKey("47w7BrouRnOSP1wVKcwuBQ")
+                                                                   //.SetDevelopmentAppSecret("2s1HvxrTTBWuu11wnHM_xA")
+                                                                   //.SetProductionAppKey("47w7BrouRnOSP1wVKcwuBQ")
+                                                                   //.SetProductionAppSecret("2s1HvxrTTBWuu11wnHM_xA")
+                                                                   //.SetFcmSenderId("55941271460")
+                                                                   //.Build();
 
-            });
+            //AirshipConfigOptions options = new AirshipConfigOptions.Builder()
+                                                                   //.SetInProduction(true)
+                                                                   //.SetDevelopmentAppKey("GWu1P24IR4W-4ojRsVvZ3g")
+                                                                   //.SetDevelopmentAppSecret("kh889bIzT4eGZfmJAFjvaA")
+                                                                   //.SetProductionAppKey("GWu1P24IR4W-4ojRsVvZ3g")
+                                                                   //.SetProductionAppSecret("kh889bIzT4eGZfmJAFjvaA")
+                                                                   //.SetFcmSenderId("265969896159")
+                                                                   //.Build();
+
+            //UrbanAirship.UAirship.TakeOff(this, options, (UAirship airship) =>
+            //{
+            //    airship.PushManager.PushEnabled = true;
+            //    airship.PushManager.UserNotificationsEnabled = true;
+            //    airship.LocationManager.LocationUpdatesEnabled = true;
+
+            //});
 
 
-            Com.Gimbal.Android.Gimbal.SetApiKey(this, "22106510-677b-4b26-8845-f797f28fded4");
-            //this class will log beacon hits and place entry/exits
+            Com.Gimbal.Android.Gimbal.SetApiKey(this, "06368b6b-e8a4-4094-8edc-9f6e7ff543e5");//TODO: 
+            //Com.Gimbal.Android.Gimbal.SetApiKey(this, "be6e6478-188a-4598-94ce-8a941de79bba");
+
             gimbalPlaceEventListener = new GimbalPlaceEventListener();
-            //add it as a listener to the placemanager
             Com.Gimbal.Android.PlaceManager.Instance.AddListener(gimbalPlaceEventListener);
-            //for local notifications, this will (i believe) set up messaging, though more work would have to be done for real GCM setup
-            Com.Gimbal.Android.CommunicationManager.Instance.StartReceivingCommunications();
-            //and tell gimbal to start looking
-            Com.Gimbal.Android.PlaceManager.Instance.StartMonitoring();
+
         }
        
         void ConfigureServices()
@@ -148,6 +153,8 @@ namespace LAPhil.Droid
                 laStore: "https://www.laphilstore.com",
                 bowlStore: "https://www.laphilstore.com/exclusives/hollywood-bowl.html",
                 mobileOrdering: "https://hollywoodbowl.splickit.com",
+                aboutUs: "https://www.laphil.com/about/la-phil/",
+                privacyPolicy: "https://www.laphil.com/privacy-policy/",
                 appTitle: "LA Phil"
             ));
 

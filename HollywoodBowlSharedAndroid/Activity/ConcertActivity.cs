@@ -15,6 +15,8 @@ using Android;
 using Android.Support.V4.Content;
 using Android.Support.V4.App;
 using Android.Runtime;
+using Com.Gimbal.Android;
+using Android.Locations;
 
 namespace HollywoodBowl.Droid
 {
@@ -82,6 +84,7 @@ namespace HollywoodBowl.Droid
             {
                 GetAllEvents();
             }
+
             CheckLocationPermissions();
 
         }
@@ -163,12 +166,42 @@ namespace HollywoodBowl.Droid
 
         void OnItemClick(object sender, int position)
         {
+            UserModel.Instance.isFromConcert = true;
             UserModel.Instance.SelectedEvent = UserModel.Instance.events[position];
-            StartActivity(new Intent(this, typeof(ProgramNotesActivity)));
+
+            Intent intent;
+            if (UserModel.Instance.SelectedEvent.ShouldOverrideDetails())
+            {
+                intent = new Intent(this, typeof(WebViewActivity));
+                intent.PutExtra("url", UserModel.Instance.SelectedEvent.GetOverrideUrl());
+                intent.PutExtra("header", UserModel.Instance.SelectedEvent.Program.Name);
+            }
+            else
+            {
+                intent = new Intent(this, typeof(ProgramNotesActivity));
+            }
+
+            StartActivity(intent);
+            OverridePendingTransition(Resource.Animation.Slide_in_right, Resource.Animation.slide_out_left);
+
         }
         void OnItembuyNowClick(object sender, int position)
         {
-            if (UserModel.Instance.events[position].BuyUrl == null)
+            var selectedEvent = UserModel.Instance.events[position];
+            if (selectedEvent.ShouldOverrideDetails())
+            {
+                Intent intent = new Intent(this, typeof(WebViewActivity));
+                intent.PutExtra("url", selectedEvent.GetOverrideUrl());
+                intent.PutExtra("header", selectedEvent.Program.Name);
+                StartActivity(intent);
+                OverridePendingTransition(Resource.Animation.Slide_in_right, Resource.Animation.slide_out_left);
+
+                var analytics = Firebase.Analytics.FirebaseAnalytics.GetInstance(this);
+                Bundle bundle = new Bundle();
+                bundle.PutString("Program", selectedEvent.Program.Name);
+                analytics.LogEvent("BuyNow", bundle);
+            }
+            if (selectedEvent.BuyUrl == null)
             {
                 Android.App.AlertDialog.Builder dialog = new Android.App.AlertDialog.Builder(this);
                 Android.App.AlertDialog alert = dialog.Create();
@@ -182,7 +215,7 @@ namespace HollywoodBowl.Droid
             }
             else
             {
-                string url = UserModel.Instance.events[position].BuyUrl;
+                string url = selectedEvent.BuyUrl;
                 string newUrl = url.Replace("https://", "https://lapatester:p@ssw0rd@");
                 var uri = Android.Net.Uri.Parse(newUrl);
                 var intent = new Intent(Intent.ActionView, uri);
@@ -207,12 +240,14 @@ namespace HollywoodBowl.Droid
             if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
             {
                 // We have permission, go ahead and use the location.
-                Com.Gimbal.Android.PlaceManager.Instance.StartMonitoring();
+                //Com.Gimbal.Android.PlaceManager.Instance.StartMonitoring();
+                Gimbal.Start();
             }
             else
             {
                 ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.AccessFineLocation }, REQUEST_LOCATION);
             }
+
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
@@ -223,7 +258,8 @@ namespace HollywoodBowl.Droid
                 if ((grantResults.Length == 1) && (grantResults[0] == Permission.Granted))
                 {
                     // Location permission has been granted, okay to retrieve the location of the device.
-                    Com.Gimbal.Android.PlaceManager.Instance.StartMonitoring();
+                    //Com.Gimbal.Android.PlaceManager.Instance.StartMonitoring();
+                    Gimbal.Start();
                 }
             }
             else
@@ -233,4 +269,5 @@ namespace HollywoodBowl.Droid
         }
 
     }
+
 }

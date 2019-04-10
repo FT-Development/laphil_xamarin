@@ -25,7 +25,7 @@ namespace HollywoodBowl.Droid
                  .SetDevelopmentAppSecret("wawJWxFwTOW3n5J5PMUgcg")
                  .SetProductionAppKey("IUNz7rBvRXiNRPstvGxpGg")
                  .SetProductionAppSecret("wawJWxFwTOW3n5J5PMUgcg")      
-                 .SetFcmSenderId("55941271460")
+                 .SetFcmSenderId("1015935331746")
                  .Build();
           
             return  options;

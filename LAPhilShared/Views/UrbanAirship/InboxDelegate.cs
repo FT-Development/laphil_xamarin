@@ -39,6 +39,7 @@ namespace LAPhilShared.Views.UrbanAirship
 
             //this.rootViewController.PresentViewController(this.messageCenterViewController, true, null);
             this.rootViewController.PresentViewController(this.messageCenterViewController, true, null);
+            UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
         }
     }
 }

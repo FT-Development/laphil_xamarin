@@ -21,6 +21,7 @@ namespace HollywoodBowl.Droid
         public String SelectedTab= "Concerts";
         public String FilterEventType = "";
         public Boolean isFromMore=false;
+        public Boolean isFromConcert = false;
         public Boolean isFromSeeConcetFilter = false;
         public String FilterStartDate = "";
         public String FilterEndDate = "";

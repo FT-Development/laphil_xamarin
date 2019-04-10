@@ -112,7 +112,7 @@ namespace LAPhil.iOS
             inboxDelegate = new InboxDelegate(Window.RootViewController);
             UAirship.Inbox().Delegate = inboxDelegate;
 
-            UAirship.Push().WeakRegistrationDelegate = (UrbanAirship.IUARegistrationDelegate) this;//TODOU: Check this
+            UAirship.Push().WeakRegistrationDelegate = (UrbanAirship.IUARegistrationDelegate) this;
 
             NSString messageListUpdated = new NSString("com.urbanairship.notification.message_list_updated");
 
@@ -240,6 +240,8 @@ namespace LAPhil.iOS
                 laStore: "https://www.laphilstore.com",
                 bowlStore: "https://www.laphilstore.com/exclusives/hollywood-bowl.html",
                 mobileOrdering: "https://hollywoodbowl.splickit.com",
+                aboutUs: "https://www.hollywoodbowl.com/about/bowl/",
+                privacyPolicy: "https://www.hollywoodbowl.com/privacy-policy/",
                 appTitle:"Hollywood Bowl"
             ));
 
@@ -401,6 +403,12 @@ namespace LAPhil.iOS
                               
             }
 
+        }
+
+        [Export("application:supportedInterfaceOrientationsForWindow:")]
+        public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations(UIApplication application, UIWindow forWindow)
+        {
+            return UIInterfaceOrientationMask.Portrait;
         }
 
     }

@@ -67,7 +67,7 @@ namespace HollywoodBowl.Droid
             lblPerformanceDesc = FindViewById<TextView>(Resource.Id.lblPerformanceDesc);
             lblSeriesName = FindViewById<TextView>(Resource.Id.lblSeriesName);
             lblHeader = FindViewById<TextView>(Resource.Id.lblHeader);
-            lblPerformanceName.SetTypeface(Utility.BoldTypeface(mContext), Android.Graphics.TypefaceStyle.Bold);
+            lblPerformanceName.SetTypeface(Utility.RegularTypeface(mContext), Android.Graphics.TypefaceStyle.Normal);
             lblPerformanceDesc.SetTypeface(Utility.RegularTypeface(mContext), Android.Graphics.TypefaceStyle.Normal);
             lblHeader.SetTypeface(Utility.BoldTypeface(mContext), Android.Graphics.TypefaceStyle.Bold);
             lblSeriesName.SetTypeface(Utility.RegularTypeface(mContext), Android.Graphics.TypefaceStyle.Normal);

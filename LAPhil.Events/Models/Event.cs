@@ -19,7 +19,7 @@ namespace LAPhil.Events
     }
 
 
-    public class Event: IEquatable<Event>
+    public class Event : IEquatable<Event>
     {
         [JsonProperty("url")]
         public string Url { get; set; }
@@ -42,8 +42,8 @@ namespace LAPhil.Events
         [JsonProperty("image_1x1")]
         public string Image1x1Url { get; set; }
 
-        public string PreferredImage1x1Url { get =>  Image1x1Url ?? ImageUrl; }
-        public string PreferredImage3x2Url { get =>  Image3x2Url ?? ImageUrl; }
+        public string PreferredImage1x1Url { get => Image1x1Url ?? ImageUrl; }
+        public string PreferredImage3x2Url { get => Image3x2Url ?? ImageUrl; }
 
         [JsonProperty("series")]
         public Series Series { get; set; }
@@ -76,6 +76,12 @@ namespace LAPhil.Events
         [JsonProperty("pieces")]
         public Piece[] Pieces { get; set; }
 
+        static private Dictionary<String, String> OverrideDetailEvents = new Dictionary<string, string> {
+            {"public opening: cardiff and miller video walk", "https://www.laphil.com/about/our-venues/cardiff-and-miller-video-walk/"},
+            {"celebrate la!", "https://www.laphil.com/celebratela/"},
+            {"the 17th korea times music festival", "http://ktmf.koreatimes.com/"}
+        };
+
 
         public Event()
         {
@@ -91,12 +97,17 @@ namespace LAPhil.Events
             return Url.GetHashCode();
         }
 
-        public bool ShouldOverrideDetails() {
-            return string.Equals(Program.Name, "Celebrate LA!", StringComparison.OrdinalIgnoreCase);
+        public bool ShouldOverrideDetails() 
+        {
+            string url = null;
+            return OverrideDetailEvents.TryGetValue(Program.Name.ToLower(), out url);
         }
 
-        public string GetOverrideUrl() {
-            return "https://www.laphil.com/celebratela/";
+        public string GetOverrideUrl() 
+        {
+            string url = "";
+            OverrideDetailEvents.TryGetValue(Program.Name.ToLower(), out url);
+            return url;
         }
 
     }

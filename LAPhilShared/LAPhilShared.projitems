@@ -207,6 +207,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GimbalManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GimbalPlaceManagerDelegate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\More\GenericWebViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FacebookHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />

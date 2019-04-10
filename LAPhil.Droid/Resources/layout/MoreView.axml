@@ -15,12 +15,18 @@
             android:padding="15dp"
             android:src="@drawable/app_logo_for_nav" />
     </LinearLayout>
-    <LinearLayout
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_above="@+id/lytCustomBottom">
+        
+        <LinearLayout
+        android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:layout_below="@+id/header"
-        android:layout_above="@+id/lytCustomBottom"
         android:orientation="vertical">
         <RelativeLayout
             android:id="@+id/btnGettingHere"
@@ -136,6 +142,35 @@
             android:visibility="visible"
             android:background="@color/line_color" />
         <RelativeLayout
+            android:id="@+id/btnAboutUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/aboutUsTextV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About Us"
+                android:textAllCaps="true"
+                android:textColor="@color/button_background_color"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/nextb" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            android:background="@color/line_color" />
+        <RelativeLayout
             android:id="@+id/btnShareApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -224,6 +259,36 @@
             android:id="@+id/myAccountView"
             android:background="@color/line_color" />
         <RelativeLayout
+            android:id="@+id/btnInbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:visibility="visible">
+            <TextView
+                android:id="@+id/inboxTextV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inbox"
+                android:textAllCaps="true"
+                android:textColor="@color/button_background_color"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/nextb" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            android:id="@+id/myAccountView"
+            android:background="@color/line_color" />
+        <RelativeLayout
             android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -250,7 +315,37 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:background="@color/line_color" />
+        <RelativeLayout
+                android:id="@+id/btnPrivacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/privacyTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy Policy"
+                    android:textAllCaps="true"
+                    android:textColor="@color/button_background_color"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/nextb" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/line_color" />
     </LinearLayout>
+                
+    </ScrollView>
+    
     <LinearLayout
         android:id="@+id/lytCustomBottom"
         android:layout_width="match_parent"

@@ -19,6 +19,7 @@ using Android.Support.V4.Content;
 using Android.Graphics;
 using System.Net.Http;
 using Newtonsoft.Json;
+using HollywoodBowlSharedAndroid.Model;
 
 namespace HollywoodBowl.Droid
 {
@@ -32,6 +33,7 @@ namespace HollywoodBowl.Droid
       //  private Receiver mReceiver;
         LAPhilUrlService urlService = LAPhil.Application.ServiceContainer.Resolve<LAPhilUrlService>();
         LoginService loginService = ServiceContainer.Resolve<LoginService>();
+        private FacebookHandler facebookHandler;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -60,8 +62,9 @@ namespace HollywoodBowl.Droid
             btnLogin.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             btnFbLogin.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
 
-        //    mReceiver = new Receiver(this, progressBar);
-          //  LocalBroadcastManager.GetInstance(this).RegisterReceiver(mReceiver, new IntentFilter("InvalidUsernameOrPassword"));
+            //    mReceiver = new Receiver(this, progressBar);
+            //  LocalBroadcastManager.GetInstance(this).RegisterReceiver(mReceiver, new IntentFilter("InvalidUsernameOrPassword"));
+            facebookHandler = new FacebookHandler(this);
 
             btnLogin.Click += (sender, e) =>
             {
@@ -78,15 +81,31 @@ namespace HollywoodBowl.Droid
                 }
 
                 progressBar.Visibility = Android.Views.ViewStates.Visible;
-
-              _= Login(lblEmail.Text, lblPassword.Text);
+                Login(lblEmail.Text, lblPassword.Text, null);
 
             };
             btnFbLogin.Click += (sender, e) =>
             {
-                Utility.SetBooleanSharedPreference("isLogin", true);
-                Finish();
+                progressBar.Visibility = Android.Views.ViewStates.Visible;
+
+                facebookHandler.StartLogin(this, (status, data) =>
+                {
+                    if (!status)
+                    {
+                        progressBar.Visibility = Android.Views.ViewStates.Gone;
+                        if (!data.Equals("Canceled"))
+                        {
+                            Toast.MakeText(ApplicationContext, data, ToastLength.Long).Show();
+                        }
+                        return;
+                    }
+
+                    Console.WriteLine("Fb Email :" + data);
+                    Login(null, null, data);
+
+                });
             };
+
             btnSignUp.Click += (sender, e) =>
             {
                 Intent intent = new Intent(this, typeof(SignupActivity));
@@ -111,17 +130,18 @@ namespace HollywoodBowl.Droid
             };
         }
 
-        private async Task Login(string username, string password)
+        private void Login(string username, string password, string facebookEmail)
         {
-            //JWT token;
             try
             {
                 var data = new
                 {
                     username = username,
-                    password = password
+                    password = password,
+                    login_type = facebookEmail == null ? 1 : 2,
+                    facebook_email = facebookEmail
                 };
-              //  AuthResponse response = null;
+
                 var json = JsonConvert.SerializeObject(data);
                 var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
                 var url = "https://my.hollywoodbowl.com/api/jwt/authorization";
@@ -129,7 +149,7 @@ namespace HollywoodBowl.Droid
                 var response =  client.PostAsync(new Uri(url), stringContent).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    var account = loginService.Login(username, password)
+                    var account = loginService.Login(username, password, facebookEmail)
                                           .Subscribe((Account obj) => GetAccountDetail(obj));
                
                 }
@@ -170,6 +190,27 @@ namespace HollywoodBowl.Droid
             UserModel.Instance.SelectedTab = "Concerts";
             StartActivity(new Intent(mContext, typeof(ConcertActivity)));
             OverridePendingTransition(Resource.Animation.Open_top_bottom, Resource.Animation.Close_top_bottom);
+
+        }
+
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            int result = 0;
+            if (resultCode == Result.Canceled)
+            {
+                result = 0;
+            }
+            else if (resultCode == Result.Ok)
+            {
+                result = -1;
+            }
+            else if (resultCode == Result.FirstUser)
+            {
+                result = 1;
+            }
+            facebookHandler.OnActivityResult(requestCode, result, data);
 
         }
 

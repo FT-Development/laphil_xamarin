@@ -94,7 +94,7 @@ namespace SharedLibraryAndroid
             }
 
             int pieceNumber = position + 1;
-            viewHolder.PieceCount.Text = "Piece " + pieceNumber;
+            viewHolder.PieceCount.Text = "";
             //viewHolder.PieceDesc.Text = piece.Description;
         }
 

@@ -25,6 +25,7 @@ using Xamarin.Forms;
 using UrbanAirship.RichPush;
 using UrbanAirship.Push;
 using UrbanAirship;
+using Com.Gimbal.Android;
 
 namespace HollywoodBowl.Droid
 {
@@ -49,32 +50,33 @@ namespace HollywoodBowl.Droid
            
             ConfigureServices();
 
-            AirshipConfigOptions options = new AirshipConfigOptions.Builder()
-              .SetInProduction(true)
-              .SetDevelopmentAppKey("IUNz7rBvRXiNRPstvGxpGg")
-              .SetDevelopmentAppSecret("wawJWxFwTOW3n5J5PMUgcg")
-              .SetProductionAppKey("IUNz7rBvRXiNRPstvGxpGg")
-              .SetProductionAppSecret("wawJWxFwTOW3n5J5PMUgcg")
-              .SetFcmSenderId("55941271460")
-              .Build();
-            UrbanAirship.UAirship.TakeOff(this, options, (UAirship airship) =>
-            {
-                airship.PushManager.PushEnabled = true;
-                airship.PushManager.UserNotificationsEnabled = true;
-                airship.LocationManager.LocationUpdatesEnabled = true;
+            //AirshipConfigOptions options = new AirshipConfigOptions.Builder()
+            //  .SetInProduction(true)
+            //  .SetDevelopmentAppKey("IUNz7rBvRXiNRPstvGxpGg")
+            //  .SetDevelopmentAppSecret("wawJWxFwTOW3n5J5PMUgcg")
+            //  .SetProductionAppKey("IUNz7rBvRXiNRPstvGxpGg")
+            //  .SetProductionAppSecret("wawJWxFwTOW3n5J5PMUgcg")
+            //  .SetFcmSenderId("1015935331746")
+            //  .Build();
 
-            });
-            UrbanAirship.UAirship.Shared().LocationManager.LocationUpdatesEnabled = true;
+            //UrbanAirship.UAirship.TakeOff(this, options, (UAirship airship) =>
+            //{
+            //    airship.PushManager.PushEnabled = true;
+            //    airship.PushManager.UserNotificationsEnabled = true;
+            //    airship.LocationManager.LocationUpdatesEnabled = true;
 
-            Com.Gimbal.Android.Gimbal.SetApiKey(this, "62939f23-c4e7-43eb-8eae-2bed104aa858");
-            //this class will log beacon hits and place entry/exits
+            //});
+            //UrbanAirship.UAirship.Shared().LocationManager.LocationUpdatesEnabled = true;
+            //UrbanAirship.UAirship.Shared().PushManager.PushEnabled = true;
+            //UrbanAirship.UAirship.Shared().PushManager.UserNotificationsEnabled = true;
+
+            //Gimbal.SetApiKey(this, "62939f23-c4e7-43eb-8eae-2bed104aa858");
+            Gimbal.SetApiKey(this, "8b55a0ac-cd52-4f26-b81c-97783e767e17");
+
             gimbalPlaceEventListener = new GimbalPlaceEventListener();
-            //add it as a listener to the placemanager
-            Com.Gimbal.Android.PlaceManager.Instance.AddListener(gimbalPlaceEventListener);
-            //for local notifications, this will (i believe) set up messaging, though more work would have to be done for real GCM setup
-            Com.Gimbal.Android.CommunicationManager.Instance.StartReceivingCommunications();
-            //and tell gimbal to start looking
-            Com.Gimbal.Android.PlaceManager.Instance.StartMonitoring();
+            PlaceManager.Instance.AddListener(gimbalPlaceEventListener);
+
+            Console.WriteLine("Channel Id: " + UAirship.Shared().PushManager.ChannelId);
 
         }
 
@@ -139,6 +141,8 @@ namespace HollywoodBowl.Droid
                 laStore: "https://www.laphilstore.com",
                 bowlStore: "https://www.laphilstore.com/exclusives/hollywood-bowl.html",
                 mobileOrdering: "https://hollywoodbowl.splickit.com",
+                aboutUs: "https://www.hollywoodbowl.com/about/bowl/",
+                privacyPolicy: "https://www.hollywoodbowl.com/privacy-policy/",
                 appTitle:"Hollywood Bowl"
             ));
 

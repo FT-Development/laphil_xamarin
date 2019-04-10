@@ -95,6 +95,10 @@ namespace HollywoodBowl.Droid
                         "var head = document.getElementsByTagName('header')[0];"
                         + "head.parentNode.removeChild(head);" +
                         "})()");
+                view.LoadUrl("javascript:(function() { " +
+                             "var notifs = document.getElementById('flash_notifications');"
+                             + "notifs.parentNode.removeChild(notifs);" +
+                             "})()");
                 if (view.CanGoBack())
                 {
                     backBtn.Visibility=ViewStates.Visible;

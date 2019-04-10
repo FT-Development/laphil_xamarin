@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Drawing;
 using System.Collections.Generic;
@@ -66,6 +66,10 @@ namespace LAPhil.Events
                     }
 
                     url = result.Value.Next;
+                    foreach (Event ev in result.Value.Results)
+                    {
+                        ev.Program.AdjustName();
+                    }
                     observer.OnNext(result.Value.Results);
                 }
                 observer.OnCompleted();
@@ -110,6 +114,10 @@ namespace LAPhil.Events
                     }
 
                     url = result.Value.Next;
+                    foreach (Event ev in result.Value.Results)
+                    {
+                        ev.Program.AdjustName();
+                    }
                     observer.OnNext(result.Value.Results);
                 }
                 observer.OnCompleted();

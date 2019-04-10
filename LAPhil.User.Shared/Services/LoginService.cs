@@ -121,7 +121,7 @@ namespace LAPhil.User
             _CurrentAccount = account;
         }
 
-        public IObservable<Account> Login(string username, string password)
+        public IObservable<Account> Login(string username, string password, string facebookEmail)
         {
             return Observable.FromAsync(async () =>
             {
@@ -130,7 +130,7 @@ namespace LAPhil.User
 
                 try
                 {
-                    response = await authService.Login(username, password);
+                    response = await authService.Login(username, password, facebookEmail);
                 }
                 catch(Exception e)
                 {

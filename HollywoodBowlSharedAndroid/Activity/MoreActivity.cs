@@ -19,8 +19,8 @@ namespace HollywoodBowl.Droid
     public class MoreActivity : Activity
     {  
         private Context mContext;
-        private TextView logoutTextView, faqText,inboxTextV, supportUsText, shareAppText, gettingTextV, myAccountTextV, seatingchartTextV, mapTextV, storeText, orderingText;
-        private RelativeLayout btnFAQ, btnSupportUs,btnInbox, btnLogout, btnGettingHere, btnShareApp, btnMyAccount, btnSeatingchart, btnMapImageView, btnStore, btnMobileOrdering;
+        private TextView logoutTextView, faqText,inboxTextV, supportUsText, shareAppText, gettingTextV, myAccountTextV, seatingchartTextV, mapTextV, storeText, orderingText, privacyText, aboutUsText;
+        private RelativeLayout btnFAQ, btnSupportUs,btnInbox, btnLogout, btnGettingHere, btnShareApp, btnMyAccount, btnSeatingchart, btnMapImageView, btnStore, btnMobileOrdering, btnPrivacy, btnAboutUs;
         private View myAccountViewLine;
         LAPhilUrlService urlService = ServiceContainer.Resolve<LAPhilUrlService>();
         LoginService loginService = ServiceContainer.Resolve<LoginService>();
@@ -88,15 +88,26 @@ namespace HollywoodBowl.Droid
                 CallWebPage(urlService.MobileOrdering, "Mobile Ordering", true);
             };
 
+            btnPrivacy.Click += delegate
+            {
+                CallWebPage(urlService.PrivacyPolicy, "Privacy Policy", IsPrivacyPolicy: true);
+            };
+
+            btnAboutUs.Click += delegate
+            {
+                CallWebPage(urlService.AboutUs, "About Us");
+            };
+
         }
 
-        private void CallWebPage(String url, String headerText,bool isMobileOrdering = false)
+        private void CallWebPage(String url, String headerText,bool isMobileOrdering = false, bool IsPrivacyPolicy = false)
         {
             UserModel.Instance.isFromMore = true;
             Intent intent = new Intent(this, typeof(WebViewActivity));
             intent.PutExtra("url", url);
             intent.PutExtra("header", headerText);
             intent.PutExtra("IsMobileOrdering", isMobileOrdering);
+            intent.PutExtra("IsPrivacyPolicy", IsPrivacyPolicy);
             StartActivity(intent);
             Finish();
         }
@@ -132,6 +143,8 @@ namespace HollywoodBowl.Droid
             btnStore = FindViewById<RelativeLayout>(Resource.Id.btnStore);
             btnInbox = FindViewById<RelativeLayout>(Resource.Id.btnInbox);
             btnMobileOrdering = FindViewById<RelativeLayout>(Resource.Id.btnMobileOrdering);
+            btnPrivacy = FindViewById<RelativeLayout>(Resource.Id.btnPrivacy);
+            btnAboutUs = FindViewById<RelativeLayout>(Resource.Id.btnAboutUs);
 
 
             var lytCustomBottom = (LinearLayout)FindViewById(Resource.Id.lytCustomBottom);
@@ -148,6 +161,8 @@ namespace HollywoodBowl.Droid
             myAccountTextV = FindViewById<TextView>(Resource.Id.myAccountTextV);
             seatingchartTextV = FindViewById<TextView>(Resource.Id.SeatingTextV);
             inboxTextV = FindViewById<TextView>(Resource.Id.inboxV);
+            privacyText = FindViewById<TextView>(Resource.Id.privacyTextView);
+            aboutUsText = FindViewById<TextView>(Resource.Id.aboutUsTextV);
 
             mapTextV.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             storeText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
@@ -160,6 +175,8 @@ namespace HollywoodBowl.Droid
             supportUsText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             myAccountTextV.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             inboxTextV.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            privacyText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            aboutUsText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
 
             //logoutTextView = view.FindViewById<TextView>(Resource.Id.logoutTextView);
 

@@ -25,6 +25,8 @@ namespace LAPhil.Urls
         public string LAStore { get; private set; }
         public string BowlStore { get; private set; }
         public string MobileOrdering { get; private set; }
+        public string AboutUs { get; private set; }
+        public string PrivacyPolicy { get; private set; }
 
         public LAPhilUrlService(
             string webDining,
@@ -48,7 +50,9 @@ namespace LAPhil.Urls
             string webForgotPassword,
             string laStore,
             string bowlStore,
-            string mobileOrdering
+            string mobileOrdering,
+            string aboutUs,
+            string privacyPolicy
         )
         {
             WebDining = webDining;
@@ -73,6 +77,8 @@ namespace LAPhil.Urls
             LAStore = laStore;
             BowlStore = bowlStore;
             MobileOrdering = mobileOrdering;
+            AboutUs = aboutUs;
+            PrivacyPolicy = privacyPolicy;
         }
     }
 }

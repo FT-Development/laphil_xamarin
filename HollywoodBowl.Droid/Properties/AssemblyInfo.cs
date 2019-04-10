@@ -26,3 +26,6 @@ using Android.App;
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
 [assembly: MetaData("com.urbanairship.autopilot", Value = "HollywoodBowl.Droid.InboxMessageAutopilot")]
+
+[assembly: MetaData("com.facebook.sdk.ApplicationId", Value = "2169766949780329")]
+[assembly: MetaData("com.facebook.sdk.ApplicationName", Value = "Hollywood Bowl")]

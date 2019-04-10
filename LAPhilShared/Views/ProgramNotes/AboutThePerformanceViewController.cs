@@ -58,7 +58,7 @@ namespace LAPhil.iOS
             // ApercuPro-Light
             // ApercuPro-Italic
             // ApercuPro-Bold
-            TitleLabel.AttributedText = ($"<b>{Event.Program.Name}</b>")
+            TitleLabel.AttributedText = (Event.Program.Name)
                 .HtmlAttributedString(matchingLabel: TitleLabel);
 
             var attributedString = Event

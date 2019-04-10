@@ -135,7 +135,7 @@ namespace LAPhil.iOS
             }
 
             if (Event.Program.Name != null) {
-                lblTitle.AttributedText = ($"<b>{Event.Program.Name}</b>")
+                lblTitle.AttributedText = (Event.Program.Name)
                 .HtmlAttributedString(matchingLabel: lblTitle);    
             } else {
                 lblTitle.Text = "";
@@ -249,17 +249,14 @@ namespace LAPhil.iOS
 
         void LoadEventImage()
         {
-            var imgConcertRect = this.imgMain.Frame;
-            var screenScale = UIScreen.MainScreen.Scale;
+            var imageSize = new System.Drawing.Size(
+                    width: (int)(UIScreen.MainScreen.Bounds.Width),
+                    height: (int)(this.imgMain.Frame.Size.Height / this.imgMain.Frame.Size.Width * UIScreen.MainScreen.Bounds.Width)
+                    );
 
             Task.Run(async () =>
             {
-                var size = new System.Drawing.Size(
-                        width: (int)(imgConcertRect.Width * screenScale),
-                        height: (int)(imgConcertRect.Height * screenScale)
-                    );
-
-                var bytes = await eventService.GetEventImageBytes(Event, size: size);
+                var bytes = await eventService.GetEventImageBytes(Event, size: imageSize);
 
                 if (bytes == null)
                 {
@@ -399,7 +396,7 @@ namespace LAPhil.iOS
 
             cell.Piece = model;
             cell.ResetViews();
-            cell.lblPiece_name.Text = $"PIECE {indexPath.Row + 1}";
+            cell.lblPiece_name.Text = "";
 
             cell.TitleValue = model.Name;
             cell.ComposerValue = model.ComposerName;

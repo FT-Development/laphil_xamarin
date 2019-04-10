@@ -12,6 +12,8 @@ namespace LAPhil.iOS
     {
         public string url = "";
         public string pageTitle = "";
+        public bool removeHeader = true;
+        public bool removePrivacyAlert = false;
 
         [Outlet]
         public UIActivityIndicatorView activityIndicator { get; set; }
@@ -39,7 +41,7 @@ namespace LAPhil.iOS
             Console.WriteLine("urlsAccessibility : {0}", url);
 
             this.webView.ScalesPageToFit = true;
-            this.webView.Delegate = new CustomWebViewDelegate(activityIndicator);
+            this.webView.Delegate = new CustomWebViewDelegate(activityIndicator, removeHeader, removePrivacyAlert);
             this.webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
         }
 
@@ -48,9 +50,12 @@ namespace LAPhil.iOS
     public class CustomWebViewDelegate : UIWebViewDelegate
     {
         private UIActivityIndicatorView activityIndicatorView;
+        private bool removeHeader, removePrivacyAlert;
 
-        public CustomWebViewDelegate(UIActivityIndicatorView activityIndicatorView) {
+        public CustomWebViewDelegate(UIActivityIndicatorView activityIndicatorView, bool removeHeader, bool removePrivacyAlert) {
             this.activityIndicatorView = activityIndicatorView;
+            this.removeHeader = removeHeader;
+            this.removePrivacyAlert = removePrivacyAlert;
         }
 
         // get's never called:
@@ -80,17 +85,33 @@ namespace LAPhil.iOS
             activityIndicatorView.Hidden = false;
             Console.WriteLine("LoadStarted");
             //Harish_A3
-            var JavaScriptForRemoveHeader = "javascript:(function() { " +
-            "var head = document.getElementsByTagName('header')[0];"
-            + "head.parentNode.removeChild(head);" +
-                "})()";
-            webView.EvaluateJavascript(JavaScriptForRemoveHeader);
 
-            var JavaScriptForRemoveGrayColor = "javascript:(function(){"
-                + "document.getElementsByClassName('hero-background phatvideo-bg videobg-id-0')[0].style.height = '60%';"
-                + "})()";
+            if (removeHeader)
+            {
+                var JavaScriptForRemoveHeader = "javascript:(function() { " +
+                "var head = document.getElementsByTagName('header')[0];"
+                + "head.parentNode.removeChild(head);" +
+                    "})()";
+                webView.EvaluateJavascript(JavaScriptForRemoveHeader);
 
-            webView.EvaluateJavascript(JavaScriptForRemoveGrayColor);
+                var JavaScriptForRemoveGrayColor = "javascript:(function(){"
+                    + "document.getElementsByClassName('hero-background phatvideo-bg videobg-id-0')[0].style.height = '60%';"
+                    + "})()";
+
+                webView.EvaluateJavascript(JavaScriptForRemoveGrayColor);
+
+            }
+
+            if (removePrivacyAlert) {
+
+                var JavaScriptForRemoveAlert = "javascript:(function() {" 
+                    + "var privacyAlert = document.getElementsByClassName('alert privacy-popup alert-dismissible')[0]; "
+                    + "privacyAlert.parentNode.removeChild(privacyAlert);"
+                    + "})()";
+                webView.EvaluateJavascript(JavaScriptForRemoveAlert);
+
+            }
+
         }
 
     }

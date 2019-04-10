@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-
+using System.Text;
 
 namespace LAPhil.Events
 {
@@ -27,6 +27,32 @@ namespace LAPhil.Events
 
         public Program()
         {
+        }
+
+        public void AdjustName()
+        {
+
+            Name = Name.Replace("\\", "<br/>");
+            Name = replacePairs(Name, '*', "<b>", "</b>");
+            Name = replacePairs(Name, '_', "<i>", "</i>");
+
+        }
+
+        private String replacePairs(String data, char pairCode, String replaceFirstWith, String replaceSecondWith)
+        {
+
+            String[] tokens = data.Split(pairCode);
+            StringBuilder builder = new StringBuilder();
+            builder.Append(tokens[0]);
+
+            for (int i = 1; i<tokens.Length; i++)
+            {
+                builder.Append(i % 2 == 1 ? replaceFirstWith : replaceSecondWith);
+                builder.Append(tokens[i]);
+            }
+
+            return builder.ToString();
+
         }
     }
 }

@@ -1,0 +1,331 @@
+{
+  "project_info": {
+    "project_number": "265969896159",
+    "firebase_url": "https://eminent-wares-128314.firebaseio.com",
+    "project_id": "eminent-wares-128314",
+    "storage_bucket": "eminent-wares-128314.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265969896159:android:b53b98f9f00463f8",
+        "android_client_info": {
+          "package_name": "com.app.fbdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "265969896159-ab1arv20pqc5q8b4q3sqjegl62dtea0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6kj2mcffH0B0sK8rOHQnnBlTEOo94fSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265969896159:android:6601b037e8d162d1",
+        "android_client_info": {
+          "package_name": "com.demoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265969896159-j7ml7ju16c461u8qrqqvj968q7jj93gj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.demoapp",
+            "certificate_hash": "5c28da4ca9004e70150ad3fd7f4cf7743cdd0851"
+          }
+        },
+        {
+          "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "265969896159-ab1arv20pqc5q8b4q3sqjegl62dtea0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6kj2mcffH0B0sK8rOHQnnBlTEOo94fSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "265969896159-k7mm47isb5hqvi2ab6r2jv0s82n7desg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hollywoodbowl.bowlapp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265969896159:android:904826a7ed39c922",
+        "android_client_info": {
+          "package_name": "com.hollywoodbowl.bowlapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "265969896159-ab1arv20pqc5q8b4q3sqjegl62dtea0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6kj2mcffH0B0sK8rOHQnnBlTEOo94fSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265969896159:android:b5f249cb7001fd76",
+        "android_client_info": {
+          "package_name": "com.imedhealth.imeddoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "265969896159-ab1arv20pqc5q8b4q3sqjegl62dtea0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6kj2mcffH0B0sK8rOHQnnBlTEOo94fSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265969896159:android:e44a446a3e383857",
+        "android_client_info": {
+          "package_name": "com.laphil.appdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "265969896159-ab1arv20pqc5q8b4q3sqjegl62dtea0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6kj2mcffH0B0sK8rOHQnnBlTEOo94fSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265969896159:android:7876a8512a25cc5e",
+        "android_client_info": {
+          "package_name": "com.pillboxes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "265969896159-ab1arv20pqc5q8b4q3sqjegl62dtea0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6kj2mcffH0B0sK8rOHQnnBlTEOo94fSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265969896159:android:a7c0948fb9d8cb8a",
+        "android_client_info": {
+          "package_name": "com.smf.daffodil.smfapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "265969896159-ab1arv20pqc5q8b4q3sqjegl62dtea0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6kj2mcffH0B0sK8rOHQnnBlTEOo94fSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265969896159:android:43ecaec2b0506b89",
+        "android_client_info": {
+          "package_name": "com.stopuno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265969896159-od734mb9vib5mumafgnkd0laqsn1cm3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stopuno",
+            "certificate_hash": "5c28da4ca9004e70150ad3fd7f4cf7743cdd0851"
+          }
+        },
+        {
+          "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "265969896159-ab1arv20pqc5q8b4q3sqjegl62dtea0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6kj2mcffH0B0sK8rOHQnnBlTEOo94fSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265969896159-evv2d2mv70rq70lkqok3qbqhaeh2bl75.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "265969896159-k7mm47isb5hqvi2ab6r2jv0s82n7desg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hollywoodbowl.bowlapp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

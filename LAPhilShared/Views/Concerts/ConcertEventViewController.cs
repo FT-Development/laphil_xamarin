@@ -147,7 +147,7 @@ namespace LAPhil.iOS
 
             ConcertsListVieww.RegisterNibForCellReuse(UINib.FromName("ConcertsTableViewCell", null), "ConcertsTableViewCell");
 
-            ConcertsListVieww.RowHeight = 332;
+            ConcertsListVieww.RowHeight = (float)(332.0 / 667.0) * UIScreen.MainScreen.Bounds.Height;
             ConcertsListVieww.EstimatedRowHeight = 332;
             ConcertsListVieww.WeakDelegate = this;
 
@@ -284,7 +284,7 @@ namespace LAPhil.iOS
                 cell.lblDate2.Text = date2;
                 cell.SelectionStyle = UITableViewCellSelectionStyle.None;
 
-                cell.lblTitle.AttributedText = ($"<b>{eventData.Program.Name}</b>")
+                cell.lblTitle.AttributedText = (eventData.Program.Name)
                     .HtmlAttributedString(matchingLabel: cell.lblTitle);
                 
                 cell.Accessories.Hidden = true;
@@ -307,8 +307,10 @@ namespace LAPhil.iOS
                         .HtmlAttributedString(matchingLabel: cell.AccessoryMessageLabel);
                 }
 
-                var imgConcertRect = cell.imgConcert.Frame;
-                var screenScale = UIScreen.MainScreen.Scale;
+                var imageSize = new System.Drawing.Size(
+                    width: (int)(UIScreen.MainScreen.Bounds.Width),
+                    height: (int)(cell.imgConcert.Frame.Size.Height / cell.imgConcert.Frame.Size.Width * UIScreen.MainScreen.Bounds.Width)
+                    );
 
                 if (localTime == DateTimeOffset.MinValue)
                 {
@@ -323,12 +325,7 @@ namespace LAPhil.iOS
 
                 Task.Run(async () =>
                 {
-                    var size = new System.Drawing.Size(
-                        width: (int)(imgConcertRect.Width * screenScale),
-                        height: (int)(imgConcertRect.Height * screenScale)
-                    );
-
-                    var bytes = await eventService.GetEventImage3x2Bytes(eventData, size: size);
+                    var bytes = await eventService.GetEventImage3x2Bytes(eventData, size: imageSize);
 
                     if (bytes == null)
                     {
@@ -348,7 +345,8 @@ namespace LAPhil.iOS
                     {
                         cell.imgConcert.Hidden = false;
                         cell.imgConcert.Image = image;
-                        cell.imgConcert.ContentMode = UIViewContentMode.ScaleAspectFill;
+                        cell.imgConcert.ContentMode = UIViewContentMode.ScaleToFill;
+                        cell.ClipsToBounds = true;
 
                         UIView.Transition(
                         withView: cell.imgConcert,
@@ -373,6 +371,11 @@ namespace LAPhil.iOS
                 cell.btnOpenDetail.TouchUpInside -= actionShowDetail;
                 cell.btnOpenDetail.TouchUpInside += actionShowDetail;
 
+                if (eventData.ShouldOverrideDetails()) {
+                    cell.btnBuyNow.Hidden = true;
+                }else {
+                    cell.btnBuyNow.Hidden = false;
+                }
                 cell.btnBuyNow.Tag = indexPath.Row;
                 cell.btnBuyNow.SetTitle("PURCHASE OPTIONS", UIControlState.Normal);
                 cell.btnBuyNow.SetTitle("PURCHASE OPTIONS", UIControlState.Highlighted);

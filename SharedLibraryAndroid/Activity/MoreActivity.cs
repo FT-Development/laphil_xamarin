@@ -18,8 +18,8 @@ namespace SharedLibraryAndroid
     public class MoreActivity : Activity
     {  
         private Context mContext;
-        private TextView logoutTextView, faqText, supportUsText, shareAppText, gettingTextV, myAccountTextV, seatingchartTextV, storeText;
-        private RelativeLayout btnFAQ, btnSupportUs, btnLogout, btnGettingHere, btnShareApp, btnMyAccount, btnSeatingchart, btnStore;
+        private TextView logoutTextView, faqText, supportUsText, shareAppText, gettingTextV, myAccountTextV, seatingchartTextV, storeText, inboxTextV, aboutUsText, privacyText;
+        private RelativeLayout btnFAQ, btnSupportUs, btnLogout, btnGettingHere, btnShareApp, btnMyAccount, btnSeatingchart, btnStore, btnInbox, btnAboutUs, btnPrivacy;
         private View myAccountViewLine;
         LAPhilUrlService urlService = ServiceContainer.Resolve<LAPhilUrlService>();
         LoginService loginService = ServiceContainer.Resolve<LoginService>();
@@ -71,15 +71,29 @@ namespace SharedLibraryAndroid
             {
                 CallWebPage(urlService.LAStore, "LA Phil Store");
             };
+            btnAboutUs.Click += delegate
+            {
+                CallWebPage(urlService.AboutUs, "About Us");
+            };
+            btnInbox.Click += delegate
+            {
+                Intent intent = new Intent(this, typeof(InboxActivity));
+                StartActivity(intent);
+            };
+            btnPrivacy.Click += delegate
+            {
+                CallWebPage(urlService.PrivacyPolicy, "Privacy Policy", IsPrivacyPolicy: true);
+            };
 
         }
 
-        private void CallWebPage(String url, String headerText)
+        private void CallWebPage(String url, String headerText, bool IsPrivacyPolicy = false)
         {
             UserModel.Instance.isFromMore = true;
             Intent intent = new Intent(this, typeof(WebViewActivity));
             intent.PutExtra("url", url);
             intent.PutExtra("header", headerText);
+            intent.PutExtra("IsPrivacyPolicy", IsPrivacyPolicy);
             StartActivity(intent);
             Finish();
         }
@@ -112,7 +126,10 @@ namespace SharedLibraryAndroid
             myAccountViewLine = FindViewById<View>(Resource.Id.myAccountView);
             btnSeatingchart = FindViewById<RelativeLayout>(Resource.Id.btnSeatingchart);
             btnStore = FindViewById<RelativeLayout>(Resource.Id.btnStore);
-           
+            btnAboutUs = FindViewById<RelativeLayout>(Resource.Id.btnAboutUs);
+            btnInbox = FindViewById<RelativeLayout>(Resource.Id.btnInbox);
+            btnPrivacy = FindViewById<RelativeLayout>(Resource.Id.btnPrivacy);
+
 
             var lytCustomBottom = (LinearLayout)FindViewById(Resource.Id.lytCustomBottom);
             tabBarView = new TabBarView(mContext);
@@ -120,21 +137,28 @@ namespace SharedLibraryAndroid
 
             logoutTextView = FindViewById<TextView>(Resource.Id.logoutTextView);
             supportUsText = FindViewById<TextView>(Resource.Id.supportTextV);
+            aboutUsText = FindViewById<TextView>(Resource.Id.aboutUsTextV);
             shareAppText = FindViewById<TextView>(Resource.Id.shareTextV);
             faqText = FindViewById<TextView>(Resource.Id.faqTextV);
             gettingTextV = FindViewById<TextView>(Resource.Id.gettingTextV);
             myAccountTextV = FindViewById<TextView>(Resource.Id.myAccountTextV);
             seatingchartTextV = FindViewById<TextView>(Resource.Id.SeatingTextV);
             storeText = FindViewById<TextView>(Resource.Id.storeText);
-          
+            inboxTextV = FindViewById<TextView>(Resource.Id.inboxTextV);
+            privacyText = FindViewById<TextView>(Resource.Id.privacyTextView);
+
             seatingchartTextV.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             storeText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            inboxTextV.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             gettingTextV.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             shareAppText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             faqText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             logoutTextView.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             supportUsText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            aboutUsText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             myAccountTextV.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            privacyText.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+
 
         }
         private void Button2_Click(object sender, EventArgs e)

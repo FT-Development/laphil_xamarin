@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 using System.Linq;
 using System;
 using LAPhil.Droid;
+using Com.Gimbal.Android;
+using Android.Support.V4.Content;
+using Android.Support.V4.App;
+using Android.Runtime;
 
 namespace SharedLibraryAndroid
 {
@@ -26,6 +30,8 @@ namespace SharedLibraryAndroid
         private RecyclerView concertRecyclerView;
         private ProgressBar progressBar;
         private TabBarView tabBarView;
+
+        private int REQUEST_LOCATION = 991;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -78,6 +84,7 @@ namespace SharedLibraryAndroid
                 GetAllEvents();
             }
 
+            CheckLocationPermissions();
 
         }
 
@@ -184,6 +191,11 @@ namespace SharedLibraryAndroid
                 intent.PutExtra("header", selectedEvent.Program.Name);
                 StartActivity(intent);
                 OverridePendingTransition(Resource.Animation.Slide_in_right, Resource.Animation.slide_out_left);
+
+                var analytics = Firebase.Analytics.FirebaseAnalytics.GetInstance(this);
+                Bundle bundle = new Bundle();
+                bundle.PutString("Program", selectedEvent.Program.Name);
+                analytics.LogEvent("BuyNow", bundle);
             }
             else if (selectedEvent.BuyUrl == null)
             {
@@ -204,6 +216,12 @@ namespace SharedLibraryAndroid
                 var uri = Android.Net.Uri.Parse(newUrl);
                 var intent = new Intent(Intent.ActionView, uri);
                 StartActivity(intent);
+
+                var analytics = Firebase.Analytics.FirebaseAnalytics.GetInstance(this);
+                Bundle bundle = new Bundle();
+                bundle.PutString("Program", selectedEvent.Program.Name);
+                analytics.LogEvent("BuyNow", bundle);
+
             }
         }
 		public override void OnBackPressed()
@@ -217,5 +235,40 @@ namespace SharedLibraryAndroid
         //    Task.Delay(400);
         //    GC.Collect(0);
         //}
-	}
+	
+        private void CheckLocationPermissions()
+        {
+            if (ContextCompat.CheckSelfPermission(this, Android.Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
+            {
+                // We have permission, go ahead and use the location.
+                //Com.Gimbal.Android.PlaceManager.Instance.StartMonitoring();
+                Gimbal.Start();
+            }
+            else
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Android.Manifest.Permission.AccessFineLocation }, REQUEST_LOCATION);
+            }
+
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            if (requestCode == REQUEST_LOCATION)
+            {
+                // Check if the only required permission has been granted
+                if ((grantResults.Length == 1) && (grantResults[0] == Permission.Granted))
+                {
+                    // Location permission has been granted, okay to retrieve the location of the device.
+                    //Com.Gimbal.Android.PlaceManager.Instance.StartMonitoring();
+                    Gimbal.Start();
+                }
+            }
+            else
+            {
+                base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            }
+        }
+
+    }
+
 }

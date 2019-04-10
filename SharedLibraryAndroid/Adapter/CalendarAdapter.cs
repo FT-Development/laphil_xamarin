@@ -42,7 +42,7 @@ namespace SharedLibraryAndroid
 
             viewHolder.CalendarRow.Tag = position;
             viewHolder.DateTextView.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);
-            viewHolder.NameTextView.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            viewHolder.NameTextView.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);
 
             var eventData = eventList[position] as Event;
 

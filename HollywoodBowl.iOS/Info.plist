@@ -66,7 +66,7 @@
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.1.10</string>
+	<string>2.1.15</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>We require your permission to create calendar events.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -79,7 +79,29 @@
 	<string>HollywoodBowl requires your permission to detect nearby beacons.</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.hollywoodbowl.bowlapp</string>
+	<key>FacebookAppID</key>
+	<string>2169766949780329</string>
+	<key>FacebookDisplayName</key>
+	<string>Hollywood Bowl</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>fb-messenger-api20140430</string>
+		<string>fb</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb2169766949780329</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>1</string>
 </dict>
 </plist>

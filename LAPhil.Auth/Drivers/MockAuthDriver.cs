@@ -12,7 +12,7 @@ namespace LAPhil.Auth
         
         }
 
-        public IObservable<AuthResponse> Login(string username, string password)
+        public IObservable<AuthResponse> Login(string username, string password, string facebookEmail)
         {
             return Observable.FromAsync(async () =>
             {

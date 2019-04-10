@@ -17,9 +17,9 @@ namespace LAPhil.Auth
             return Driver.RefreshToken(token: token, refreshToken: refreshToken);
         }
 
-        public IObservable<AuthResponse> Login(string username, string password)
+        public IObservable<AuthResponse> Login(string username, string password, string facebookEmail)
         {
-            return Driver.Login(username, password);
+            return Driver.Login(username, password, facebookEmail);
         }
 
     }

@@ -163,13 +163,19 @@ namespace LAPhil.iOS
                 "var head = document.getElementsByTagName('header')[0];"
                 + "head.parentNode.removeChild(head);" +
                     "})()";
-                webView.EvaluateJavascript(JavaScriptForRemoveHeader);//TODO U
+                webView.EvaluateJavascript(JavaScriptForRemoveHeader);
 
                 var JavaScriptForRemoveGrayColor = "javascript:(function(){"
                     + "document.getElementsByClassName('hero-background phatvideo-bg videobg-id-0')[0].style.height = '60%';"
                     + "})()";
 
                 webView.EvaluateJavascript(JavaScriptForRemoveGrayColor);
+
+                var JavaScriptForRemoveFlashNotifications = "javascript:(function() { " +
+                    "var notifs = document.getElementById('flash_notifications');"
+                    + "notifs.parentNode.removeChild(notifs);" +
+                    "})()";
+                webView.EvaluateJavascript(JavaScriptForRemoveFlashNotifications);
 
 
             }

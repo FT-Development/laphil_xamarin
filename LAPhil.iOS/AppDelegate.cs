@@ -58,6 +58,7 @@ namespace LAPhil.iOS
             ConfigureServices();
             Firebase.Core.App.Configure();
             //var container = Google.TagManager.Manager.GetInstance.GetContainer("GTM-KLLCRTG");
+
             return true;
         }
 
@@ -72,10 +73,10 @@ namespace LAPhil.iOS
             // Populate AirshipConfig.plist with your app's info from https://go.urbanairship.com
             // or set runtime properties here.
             UAConfig config = UAConfig.DefaultConfig();
-            config.DevelopmentAppKey = "IUNz7rBvRXiNRPstvGxpGg";
-            config.DevelopmentAppSecret = "wawJWxFwTOW3n5J5PMUgcg";
-            config.ProductionAppKey = "IUNz7rBvRXiNRPstvGxpGg";
-            config.ProductionAppSecret = "wawJWxFwTOW3n5J5PMUgcg";
+            config.DevelopmentAppKey = "47w7BrouRnOSP1wVKcwuBQ";
+            config.DevelopmentAppSecret = "2s1HvxrTTBWuu11wnHM_xA";
+            config.ProductionAppKey = "47w7BrouRnOSP1wVKcwuBQ";
+            config.ProductionAppSecret = "2s1HvxrTTBWuu11wnHM_xA";
 
             if (!config.Validate())
             {
@@ -225,6 +226,8 @@ namespace LAPhil.iOS
                 laStore: "https://www.laphilstore.com",
                 bowlStore: "https://www.laphilstore.com/exclusives/hollywood-bowl.html",
                 mobileOrdering: "https://hollywoodbowl.splickit.com",
+                aboutUs: "https://www.laphil.com/about/la-phil/",
+                privacyPolicy: "https://www.laphil.com/privacy-policy/",
                 appTitle: "LA Phil"
             ));
 

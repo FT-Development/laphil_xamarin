@@ -31,8 +31,9 @@ namespace LAPhil.iOS
 {
     public partial class LogInPageViewController : UIViewController
     {
-        NSObject observer;
-        LoginService loginService = ServiceContainer.Resolve<LoginService>();
+
+        private NSObject observer;
+        private LoginService loginService = ServiceContainer.Resolve<LoginService>();
 
         public LogInPageViewController (IntPtr handle) : base (handle)
         {
@@ -42,139 +43,12 @@ namespace LAPhil.iOS
         {
             base.ViewDidLoad();
 
-            btnClose.TouchUpInside += CloseView;
-            btnClose.TouchUpOutside += CloseView;
+            btnClose.TouchUpInside += ActClose;
+            btnClose.TouchUpOutside += ActClose;
 
-            btnLogin.TouchUpInside += actionLogin;
-            btnFB.TouchUpInside += fbLogin_TouchUpInside;
+            btnLogin.TouchUpInside += ActLogin;
+            btnFB.TouchUpInside += ActFbLogin;
 
-        }
-
-
-        public void SetMyAccountData(User.Account account)
-        {
-            
-            Console.WriteLine(">>>>  myAccount Username: {0}", account.Username);
-            Console.WriteLine(">>>>  myAccount Token: {0}", account.Token.TokenString);
-
-
-            DispatchQueue.GetGlobalQueue(DispatchQueuePriority.Default).DispatchAsync(() =>
-            {
-
-                DispatchQueue.MainQueue.DispatchAsync(() => {
-                    NSUserDefaults.StandardUserDefaults.SetString("1", "isLoginOpen");
-                    //LAPhilShared.SharedClass.StopLoaderIndicator(this.loadingIndeicator);//GIF_Animation_STOP
-
-                    //var okAlertController = UIAlertController.Create("LA Phil", "Welcome "+ account.Username , UIAlertControllerStyle.Alert);
-                    ////Add Actions
-
-                    //okAlertController.AddAction(UIAlertAction.Create("Okay", UIAlertActionStyle.Default, alert => {
-                        Task.Delay(500);
-                        loginService.Save(account);
-                        Task.Delay(500);
-                        loginService.SetCurrentAccount(account);
-                        Task.Delay(500);
-                        loginService.Rx.Complete(account);
-                    //}));
-                    LAPhilShared.SharedClass.StopLoaderIndicator(this.loadingIndeicator);//GIF_Animation_STOP
-
-                    //UITabBarController tabBarController = (UITabBarController)this.TabBarController;
-                    //tabBarController.SelectedIndex = 2;
-                    //UITabBarController tabBarController = (UITabBarController)this.rootViewController;
-                    //tabBarController.SelectedIndex = 2;
-                    //var storyboard = UIStoryboard.FromName("Main", null);
-                    //var myTabBarRootViewController = storyboard.InstantiateViewController("tabBarRootViewController") as tabBarRootViewController;
-                    //myTabBarRootViewController.SelectedIndex = 2;
-                    //PresentViewController(okAlertController, true, null);
-                });
-            });
-
-        }
-
-        //Action
-        private void actionLogin(object sender, EventArgs e)
-        {
-            Console.WriteLine("Name : {0}",txtEmail.Text);
-            Console.WriteLine("Password : {0}", txtPassword.Text);
-
-            string email = txtEmail.Text;  
-            if(email.Length == 0)
-            {
-                var okAlertController = UIAlertController.Create("LA Phil", "Please enter email", UIAlertControllerStyle.Alert);
-                okAlertController.AddAction(UIAlertAction.Create("Okay", UIAlertActionStyle.Default, null));
-                PresentViewController(okAlertController, true, null);
-                txtEmail.BecomeFirstResponder();
-                return;
-            }else if (txtPassword.Text.Length == 0)
-            {
-                var okAlertController = UIAlertController.Create("LA Phil", "Please enter password", UIAlertControllerStyle.Alert);
-                okAlertController.AddAction(UIAlertAction.Create("Okay", UIAlertActionStyle.Default, null));
-                PresentViewController(okAlertController, true, null);
-                txtPassword.BecomeFirstResponder();
-                return;
-            }else if (!Regex.Match(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").Success) {  
-                var okAlertController = UIAlertController.Create("LA Phil", "Please enter correct email", UIAlertControllerStyle.Alert);
-                okAlertController.AddAction(UIAlertAction.Create("Okay", UIAlertActionStyle.Default, null));
-                PresentViewController(okAlertController, true, null);
-                txtEmail.BecomeFirstResponder();
-                return;
-            }
-
-            LAPhilShared.SharedClass.StartLoaderIndicator(this.loadingIndeicator);//GIF_Animation_START
-            try
-            {
-                observer = NSNotificationCenter.DefaultCenter.AddObserver((NSString)"PostLoginException", PostLoginException);
-                loginService.Login(txtEmail.Text, txtPassword.Text).Subscribe((User.Account obj) => SetMyAccountData(obj));
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine("Exception :: ERROR ---- {0}", exception);
-
-                if (exception is UnknownAuthException)
-                {
-                    var errorMessage = exception.Message;
-
-                    var okAlertController = UIAlertController.Create("LA Phil", errorMessage, UIAlertControllerStyle.Alert);
-                    okAlertController.AddAction(UIAlertAction.Create("Okay", UIAlertActionStyle.Default, null));
-                    PresentViewController(okAlertController, true, null);
-                }
-                else
-                {
-                    var okAlertController = UIAlertController.Create("LA Phil", "Wrong email or password", UIAlertControllerStyle.Alert);
-                    okAlertController.AddAction(UIAlertAction.Create("Okay", UIAlertActionStyle.Default, null));
-                    PresentViewController(okAlertController, true, null);
-                }
-                txtEmail.BecomeFirstResponder();
-                LAPhilShared.SharedClass.StopLoaderIndicator(this.loadingIndeicator);//GIF_Animation_STOP
-                return;
-                //if (e is User.InvalidUsernameOrPassword)
-                //InvalidCredentialsError(hidden: false);
-                //else if (e is UnknownAuthException)
-                //InvalidCredentialsError(hidden: false);
-            }
-        }
-
-        void PostLoginException(NSNotification obj)
-        {
-            var okAlertController = UIAlertController.Create("LA Phil", "Invalid Email Or Password", UIAlertControllerStyle.Alert);
-            okAlertController.AddAction(UIAlertAction.Create("Okay", UIAlertActionStyle.Default, null));
-            PresentViewController(okAlertController, true, null);
-            txtEmail.BecomeFirstResponder();
-            LAPhilShared.SharedClass.StopLoaderIndicator(this.loadingIndeicator);//GIF_Animation_STOP
-
-        }
-
-        private void CloseView(object UIButton, EventArgs e)
-        {
-            Console.WriteLine("Pop CloseView ");
-            var isLoginOpen = NSUserDefaults.StandardUserDefaults.StringForKey("isLoginOpen");
-            if(isLoginOpen != "comefromMore")
-            {
-                NSUserDefaults.StandardUserDefaults.SetString("0", "isLoginOpen");
-                NSNotificationCenter.DefaultCenter.PostNotificationName((NSString)"setIndex", null);    
-            }
-
-            loginService.LoginCancel();
         }
 
         public override void ViewDidDisappear(bool animated)
@@ -183,45 +57,138 @@ namespace LAPhil.iOS
             NSUserDefaults.StandardUserDefaults.SetString("0", "isLoginOpen");
         }
 
-
-        private void fbLogin_TouchUpInside(object sender, EventArgs e)
+        private string GetAppName() 
         {
-            var auth = new OAuth2Authenticator(
-                clientId: "1843461312586790",
-                scope: "",
-                authorizeUrl: new Uri("https://m.facebook.com/dialog/oauth/"),
-                redirectUrl: new Uri("http://www.facebook.com/connect/login_success.html"));
-
-            auth.Completed += Auth_Completed;
-            var ui = auth.GetUI();
-            PresentViewController(ui, true, null);
+            return (NSString)NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleName");
         }
 
-        private async void Auth_Completed(object sender, AuthenticatorCompletedEventArgs e)
+        private void ShowAlert(string title, string message) 
         {
-            if (e.IsAuthenticated)
+            var okAlertController = UIAlertController.Create(title, message, UIAlertControllerStyle.Alert);
+            okAlertController.AddAction(UIAlertAction.Create("Okay", UIAlertActionStyle.Default, null));
+            PresentViewController(okAlertController, true, null);
+        }
+
+        //Actions
+        private void ActClose(object UIButton, EventArgs e)
+        {
+            var isLoginOpen = NSUserDefaults.StandardUserDefaults.StringForKey("isLoginOpen");
+            if (isLoginOpen != "comefromMore")
             {
-                var request = new OAuth2Request("GET",
-                                                new Uri("https://graph.facebook.com/me?fields=name,picture,cover,birthday")
-                                                , null, e.Account);
-                var response = await request.GetResponseAsync();
-                var user = JsonValue.Parse(response.GetResponseText());
-                var fbName = user["name"];
-                var fbCover = user["cover"]["source"];
-                var fbProfile = user["picture"]["data"]["url"];
-
-                lblName.Text = fbName.ToString();
-                imgCover.Image = UIImage.LoadFromData(NSData.FromUrl(new NSUrl(fbCover)));
-                imgProfile.Image = UIImage.LoadFromData(NSData.FromUrl(new NSUrl(fbProfile)));
+                NSUserDefaults.StandardUserDefaults.SetString("0", "isLoginOpen");
+                NSNotificationCenter.DefaultCenter.PostNotificationName((NSString)"setIndex", null);
             }
-            //DismissViewController(true, null);
+            loginService.LoginCancel();
         }
 
-        public override void DidReceiveMemoryWarning()
+        private void ActLogin(object sender, EventArgs e)
         {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+
+            string email = txtEmail.Text;
+            if (email.Length == 0)
+            {
+                ShowAlert(GetAppName(), "Please enter email");
+                txtEmail.BecomeFirstResponder();
+                return;
+            }
+
+            if (txtPassword.Text.Length == 0)
+            {
+                ShowAlert(GetAppName(), "Please enter password");
+                txtPassword.BecomeFirstResponder();
+                return;
+            }
+
+            if (!Regex.Match(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").Success) {
+                ShowAlert(GetAppName(), "Please enter correct email");
+                txtEmail.BecomeFirstResponder();
+                return;
+            }
+
+            LAPhilShared.SharedClass.StartLoaderIndicator(this.loadingIndeicator);//GIF_Animation_START
+            Login(txtEmail.Text, txtPassword.Text, null);
+
         }
+
+        private void ActFbLogin(object sender, EventArgs e)
+        {
+            LAPhilShared.SharedClass.StartLoaderIndicator(this.loadingIndeicator);//GIF_Animation_START
+
+            FacebookHandler facebookHandler = new FacebookHandler();
+            facebookHandler.Login((status, data) =>
+            {
+                if (!status) 
+                {
+                    if (!data.Equals("Canceled"))
+                    {
+                        ShowAlert(GetAppName(), data);
+                    }
+                    return;
+                }
+
+                Console.WriteLine("Fb Email: " + data);
+                Login(null, null, data);
+            });
+
+        }
+
+        //Webservices
+        private void Login(string userName, string password, string facebookEmail) 
+        {
+            try
+            {
+                NSNotificationCenter.DefaultCenter.AddObserver((NSString)"PostLoginException", (obj) => 
+                {
+                    SharedClass.StopLoaderIndicator(this.loadingIndeicator);
+                    txtEmail.BecomeFirstResponder();
+                    ShowAlert(GetAppName(), "Invalid Email Or Password");
+                });
+                loginService.Login(userName, password, facebookEmail)
+                            .Subscribe((User.Account obj) => SetMyAccountData(obj));
+            }
+            catch (Exception exception)
+            {
+                SharedClass.StopLoaderIndicator(this.loadingIndeicator);
+                txtEmail.BecomeFirstResponder();
+                Console.WriteLine("Exception :: ERROR ---- {0}", exception);
+
+                if (exception is UnknownAuthException)
+                {
+                    ShowAlert(GetAppName(), exception.Message);
+                }
+                else
+                {
+                    ShowAlert(GetAppName(), "Invalid Email Or Password");
+                }
+            }
+        }
+
+        public void SetMyAccountData(User.Account account)
+        {
+            
+            Console.WriteLine(">>>>  myAccount Username: {0}", account.Username);
+            Console.WriteLine(">>>>  myAccount Token: {0}", account.Token.TokenString);
+
+            DispatchQueue.GetGlobalQueue(DispatchQueuePriority.Default).DispatchAsync(() =>
+            {
+
+                DispatchQueue.MainQueue.DispatchAsync(() => {
+                    NSUserDefaults.StandardUserDefaults.SetString("1", "isLoginOpen");
+                        
+                    Task.Delay(500);
+                    loginService.Save(account);
+                    Task.Delay(500);
+                    loginService.SetCurrentAccount(account);
+                    Task.Delay(500);
+                    loginService.Rx.Complete(account);
+
+                    LAPhilShared.SharedClass.StopLoaderIndicator(this.loadingIndeicator);//GIF_Animation_STOP
+
+                });
+            });
+
+        }
+
     }
 }
 

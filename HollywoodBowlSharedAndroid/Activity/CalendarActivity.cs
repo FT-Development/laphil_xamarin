@@ -180,7 +180,22 @@ namespace HollywoodBowl.Droid
         {
 
             UserModel.Instance.SelectedEvent = eventList[position];
-            StartActivity(new Intent(this, typeof(ProgramNotesActivity)));
+
+            Intent intent;
+            if (UserModel.Instance.SelectedEvent.ShouldOverrideDetails())
+            {
+                UserModel.Instance.isFromConcert = true;
+                intent = new Intent(this, typeof(WebViewActivity));
+                intent.PutExtra("url", UserModel.Instance.SelectedEvent.GetOverrideUrl());
+                intent.PutExtra("header", UserModel.Instance.SelectedEvent.Program.Name);
+            }
+            else
+            {
+                UserModel.Instance.isFromConcert = false;
+                intent = new Intent(this, typeof(ProgramNotesActivity));
+            }
+
+            StartActivity(intent);
 
         }
 

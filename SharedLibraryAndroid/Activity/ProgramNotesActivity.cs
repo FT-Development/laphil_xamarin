@@ -98,6 +98,11 @@ namespace SharedLibraryAndroid
                     var uri = Android.Net.Uri.Parse(newUrl);
                     var intent = new Intent(Intent.ActionView, uri);
                     StartActivity(intent);
+
+                    var analytics = Firebase.Analytics.FirebaseAnalytics.GetInstance(this);
+                    Bundle bundle = new Bundle();
+                    bundle.PutString("Program", selectedEvent.Program.Name);
+                    analytics.LogEvent("BuyNow", bundle);
                 }
             };
 
@@ -107,6 +112,11 @@ namespace SharedLibraryAndroid
                 intent.PutExtra("Name",selectedEvent.Program.Name);
                 intent.PutExtra("Description",selectedEvent.Description);
                 StartActivity(intent);
+
+                var analytics = Firebase.Analytics.FirebaseAnalytics.GetInstance(this);
+                Bundle bundle = new Bundle();
+                bundle.PutString("Program", selectedEvent.Program.Name);
+                analytics.LogEvent("AboutPerformance", bundle);
             };
 
             GetData();
@@ -192,7 +202,7 @@ namespace SharedLibraryAndroid
             btnAboutThePerformance.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             btnBuyTicket.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
 
-            lblTicketName.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            lblTicketName.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);
             header.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             lblDatetime.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);
             lblLength.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);

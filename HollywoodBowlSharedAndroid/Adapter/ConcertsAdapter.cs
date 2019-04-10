@@ -63,7 +63,7 @@ namespace HollywoodBowl.Droid
 
             viewHolder.DateTextView.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             viewHolder.DayTimeTextView.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);
-            viewHolder.NameTextView.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            viewHolder.NameTextView.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);
 
             viewHolder.btnSeeDetail.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             viewHolder.btnbuynow.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
@@ -98,7 +98,16 @@ namespace HollywoodBowl.Droid
             }
             catch (Exception)
             { }
-           
+
+            if (eventData.ShouldOverrideDetails())
+            {
+                viewHolder.btnbuynow.Visibility = ViewStates.Gone;
+            }
+            else
+            {
+                viewHolder.btnbuynow.Visibility = ViewStates.Visible;
+            }
+
         }
         // Return the number of items
         public override int ItemCount => eventList.Count;

@@ -23,6 +23,7 @@ namespace SharedLibraryAndroid
         public static ProgressBar progress_bar;
         public String Url { get; set; }
         public String HeaderTitle { get; set; }
+        public bool IsPrivacyPolicy { get; set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,6 +35,7 @@ namespace SharedLibraryAndroid
 
             Url= Intent.GetStringExtra("url");
             HeaderTitle = Intent.GetStringExtra("header");
+            IsPrivacyPolicy = Intent.GetBooleanExtra("IsPrivacyPolicy", false);
 
             lblHeaderTextView.Text = HeaderTitle;
             btnBack.Click += delegate
@@ -100,14 +102,22 @@ namespace SharedLibraryAndroid
             webView.ScrollBarStyle = ScrollbarStyles.OutsideOverlay;
             // so there's no 'white line'            
             webView.ScrollbarFadingEnabled = false;
-            webView.SetWebViewClient(new HybridWebViewClient());
+            webView.SetWebViewClient(new HybridWebViewClient(IsPrivacyPolicy));
             WebSettings settings = webView.Settings;
             settings.DomStorageEnabled = true;
             //webView.SetWebChromeClient();
         }
 
         private class HybridWebViewClient : WebViewClient  
-        {  
+        {
+            private bool IsPrivacyPolicy = false;
+
+            public HybridWebViewClient(bool IsPrivacyPolicy)
+            {
+                this.IsPrivacyPolicy = IsPrivacyPolicy;
+            }
+
+
             public override bool ShouldOverrideUrlLoading(WebView view, string url)  
             {  
   
@@ -128,16 +138,28 @@ namespace SharedLibraryAndroid
             public override void OnLoadResource(WebView view, string url)
             {
                 base.OnLoadResource(view, url);
-                var tempWeb = "laphil";
-                if (tempWeb.Contains(url))
+
+                if (IsPrivacyPolicy)
                 {
                     view.LoadUrl("javascript:(function(){"
-                       + "document.getElementsByClassName('hero-background phatvideo-bg videobg-id-0')[0].style.height = '60%';"
-                       + "})()");
-                    view.LoadUrl("javascript:(function() { " +
-                            "var head = document.getElementsByTagName('header')[0];"
-                            + "head.parentNode.removeChild(head);" +
-                            "})()");
+                                 + "var privacyAlert = document.getElementsByClassName('alert privacy-popup alert-dismissible')[0];"
+                                 + "privacyAlert.parentNode.removeChild(privacyAlert);"
+                                 + "})()");
+
+                }
+                else
+                {
+                    var tempWeb = "laphil";
+                    if (tempWeb.Contains(url))
+                    {
+                        view.LoadUrl("javascript:(function(){"
+                           + "document.getElementsByClassName('hero-background phatvideo-bg videobg-id-0')[0].style.height = '60%';"
+                           + "})()");
+                        view.LoadUrl("javascript:(function() { " +
+                                "var head = document.getElementsByTagName('header')[0];"
+                                + "head.parentNode.removeChild(head);" +
+                                "})()");
+                    }
                 }
                 progress_bar.Visibility = ViewStates.Gone;
             }

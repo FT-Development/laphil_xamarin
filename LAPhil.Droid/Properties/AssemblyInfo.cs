@@ -25,3 +25,7 @@ using Android.App;
 
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
+[assembly: MetaData("com.urbanairship.autopilot", Value = "LAPhil.Droid.InboxMessageAutopilot")]
+
+[assembly: MetaData("com.facebook.sdk.ApplicationId", Value = "2343424585877717")]
+[assembly: MetaData("com.facebook.sdk.ApplicationName", Value = "LA Phil")]

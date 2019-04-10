@@ -14,9 +14,7 @@ using LAPhil.Events;
 using LAPhil.Urls;
 using LAPhilShared;
 using Xamarin.Forms;
-#if __HB__
 using UrbanAirship;
-#endif
 
 namespace LAPhil.iOS
 {
@@ -47,11 +45,12 @@ namespace LAPhil.iOS
                 new MoreAction{ Label = "MAP", Action = OnInteractiveMap},
                 new MoreAction{ Label = "THE BOWL STORE", Action = OnBowlStoreClick},
                 new MoreAction{ Label = "FAQ", Action = OnFAQ},
-                // new MoreAction{ Label = "SHARE THIS APP", Action = OnShareThisApp},
+                new MoreAction{ Label = "ABOUT US", Action = OnAboutUs},
                 new MoreAction{ Label = "SUPPORT US", Action = OnSupportUs},
                 new MoreAction{ Label = "MY ACCOUNT DETAILS", Action = OnMyAccountDetails},
                 new MoreAction{ Label = "INBOX", Action = OnInbox},
-                new MoreAction{ Label = "LOG OUT", Action = OnLogout}
+                new MoreAction{ Label = "LOG OUT", Action = OnLogout},
+                new MoreAction{ Label = "PRIVACY POLICY", Action = OnPrivacyPolicyClick}
             };
             var laList = new List<MoreAction>
             {
@@ -59,10 +58,12 @@ namespace LAPhil.iOS
                 new MoreAction{ Label = "SEATING CHART", Action = OnSeatingChart},
                 new MoreAction{ Label = "LA PHIL STORE", Action = OnLAStoreClick},
                 new MoreAction{ Label = "FAQ", Action = OnFAQ},
-                // new MoreAction{ Label = "SHARE THIS APP", Action = OnShareThisApp},
+                new MoreAction{ Label = "ABOUT US", Action = OnAboutUs},
                 new MoreAction{ Label = "SUPPORT US", Action = OnSupportUs},
                 new MoreAction{ Label = "MY ACCOUNT DETAILS", Action = OnMyAccountDetails},
-                new MoreAction{ Label = "LOG OUT", Action = OnLogout}
+                new MoreAction{ Label = "INBOX", Action = OnInbox},
+                new MoreAction{ Label = "LOG OUT", Action = OnLogout},
+                new MoreAction{ Label = "PRIVACY POLICY", Action = OnPrivacyPolicyClick}
             };
             #if __HB__
             return hbList;
@@ -80,10 +81,11 @@ namespace LAPhil.iOS
                 new MoreAction{ Label = "MAP", Action = OnInteractiveMap},
                 new MoreAction{ Label = "THE BOWL STORE", Action = OnBowlStoreClick},
                 new MoreAction{ Label = "FAQ", Action = OnFAQ},
-                //new MoreAction{ Label = "SHARE THIS APP", Action = OnShareThisApp},
+                new MoreAction{ Label = "ABOUT US", Action = OnAboutUs},
                 new MoreAction{ Label = "SUPPORT US", Action = OnSupportUs},
                 new MoreAction{ Label = "INBOX", Action = OnInbox},
-                new MoreAction{ Label = "LOG IN", Action = OnLogin}
+                new MoreAction{ Label = "LOG IN", Action = OnLogin},
+                new MoreAction{ Label = "PRIVACY POLICY", Action = OnPrivacyPolicyClick}
             };
             var laList = new List<MoreAction>
             {
@@ -91,9 +93,11 @@ namespace LAPhil.iOS
                 new MoreAction{ Label = "SEATING CHART", Action = OnSeatingChart},
                 new MoreAction{ Label = "LA PHIL STORE", Action = OnLAStoreClick},
                 new MoreAction{ Label = "FAQ", Action = OnFAQ},
-                //new MoreAction{ Label = "SHARE THIS APP", Action = OnShareThisApp},
+                new MoreAction{ Label = "ABOUT US", Action = OnAboutUs},
                 new MoreAction{ Label = "SUPPORT US", Action = OnSupportUs},
-                new MoreAction{ Label = "LOG IN", Action = OnLogin}
+                new MoreAction{ Label = "INBOX", Action = OnInbox},
+                new MoreAction{ Label = "LOG IN", Action = OnLogin},
+                new MoreAction{ Label = "PRIVACY POLICY", Action = OnPrivacyPolicyClick}
             };
             #if __HB__
             return hbList;
@@ -104,11 +108,9 @@ namespace LAPhil.iOS
 
         void OnInbox()
         {
-            #if __HB__
             UAirship.Push().UserPushNotificationsEnabled = true;
             var app = UIApplication.SharedApplication.Delegate as AppDelegate;
             app.inboxDelegate.ShowInbox();
-            #endif
         }
 
         void OnInteractiveMap()
@@ -132,6 +134,14 @@ namespace LAPhil.iOS
         void OnMyAccountDetails()
         {
             Device.OpenUri(new Uri(urlService.WebMyAccountDetails));
+        }
+
+        void OnAboutUs()
+        {
+            var vc = (GenericWebViewController)Storyboard.InstantiateViewController("GenericWebViewController");
+            vc.pageTitle = "About Us";
+            vc.url = urlService.AboutUs;
+            NavigationController.PushViewController(vc, true);
         }
 
         void OnSeatingChart()
@@ -183,6 +193,18 @@ namespace LAPhil.iOS
             var vc = (GenericWebViewController)Storyboard.InstantiateViewController("GenericWebViewController");
             vc.pageTitle = "Mobile Ordering";
             vc.url = urlService.MobileOrdering;
+            vc.removeHeader = false;
+            NavigationController.PushViewController(vc, true);
+
+        }
+
+        void OnPrivacyPolicyClick()
+        {
+            var vc = (GenericWebViewController)Storyboard.InstantiateViewController("GenericWebViewController");
+            vc.pageTitle = "Privacy Policy";
+            vc.url = urlService.PrivacyPolicy;
+            vc.removeHeader = false;
+            vc.removePrivacyAlert = true;
             NavigationController.PushViewController(vc, true);
 
         }

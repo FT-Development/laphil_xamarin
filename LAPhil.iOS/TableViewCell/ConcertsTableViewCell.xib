@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,11 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
                         <subviews>
                             <view alpha="0.34999999999999998" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="6232">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="271"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="269.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18582">
-                                        <rect key="frame" x="-1" y="0.0" width="322" height="294"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18582">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="269.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="ApercuPro-Bold" family="Apercu Pro" pointSize="12"/>
                                         <state key="normal">
@@ -35,18 +34,21 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="18582" secondAttribute="trailing" id="C8K-4y-FaA"/>
+                                    <constraint firstItem="18582" firstAttribute="leading" secondItem="6232" secondAttribute="leading" id="FoA-3E-6Ke"/>
+                                    <constraint firstAttribute="bottom" secondItem="18582" secondAttribute="bottom" id="Hgl-xV-JjS"/>
+                                    <constraint firstItem="18582" firstAttribute="top" secondItem="6232" secondAttribute="top" id="lHm-2E-8Pa"/>
+                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="172">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="271"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="269.5"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="271" id="8HZ-I0-DVg"/>
-                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12950">
-                                <rect key="frame" x="16" y="212" width="288" height="49"/>
+                                <rect key="frame" x="16" y="210.5" width="288" height="49"/>
                                 <attributedString key="attributedText">
                                     <fragment content="DEBUSSY, RAVEL, &amp; BEYOND One of the finest composers">
                                         <attributes>
@@ -115,7 +117,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wdr-ts-GxY">
-                                <rect key="frame" x="0.0" y="271" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="269.5" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="174">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
@@ -151,6 +153,7 @@
                             <constraint firstAttribute="trailing" secondItem="Wdr-ts-GxY" secondAttribute="trailing" id="Syb-Rt-2P8"/>
                             <constraint firstItem="172" firstAttribute="top" secondItem="iHh-ow-09F" secondAttribute="top" id="T06-Dn-j4a"/>
                             <constraint firstItem="6232" firstAttribute="height" secondItem="172" secondAttribute="height" id="VYr-kl-QWA"/>
+                            <constraint firstAttribute="bottom" secondItem="Wdr-ts-GxY" secondAttribute="bottom" id="VjX-Ot-DpK"/>
                             <constraint firstItem="Wdr-ts-GxY" firstAttribute="leading" secondItem="iHh-ow-09F" secondAttribute="leading" id="XRg-8v-DSc"/>
                             <constraint firstAttribute="trailing" secondItem="16214" secondAttribute="trailing" constant="16" id="Yer-8W-iJy"/>
                             <constraint firstItem="6232" firstAttribute="width" secondItem="172" secondAttribute="width" id="bmO-Ak-Csm"/>

@@ -17,8 +17,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\UserModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\AndroidInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\Utility.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\TabBar.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\TabBarButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\CalendarFragment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Concerts\ConcertsView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GettingHere\GettingHereView.cs" />
@@ -68,6 +66,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Adapter\PerformerArtistsAdapter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Activity\LoginActivity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GimbalPlaceEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Activity\InboxActivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\TabBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\TabBarButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\FacebookHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\SupportUs\" />

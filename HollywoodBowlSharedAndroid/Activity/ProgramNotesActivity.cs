@@ -201,7 +201,7 @@ namespace HollywoodBowl.Droid
             btnAboutThePerformance.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             btnBuyTicket.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
 
-            lblTicketName.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
+            lblTicketName.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);
             header.SetTypeface(Utility.BoldTypeface(mContext), TypefaceStyle.Bold);
             lblDatetime.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);
             lblLength.SetTypeface(Utility.RegularTypeface(mContext), TypefaceStyle.Normal);

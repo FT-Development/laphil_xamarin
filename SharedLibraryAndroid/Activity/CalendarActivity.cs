@@ -198,7 +198,7 @@ namespace SharedLibraryAndroid
                 intent = new Intent(this, typeof(ProgramNotesActivity));
             }
 
-            StartActivity(intent);
+            StartActivity(intent);h
 
         }
         public void FilterData()
